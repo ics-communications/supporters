@@ -17,3 +17,6 @@ copy-review/
 __pycache__/
 node_modules/
 .wrangler/
+
+# Design-hook cache (local)
+.impeccable/hook.cache.json

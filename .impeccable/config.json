@@ -1,0 +1,53 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "26-impact/index.html"
+        ],
+        "createdAt": "2026-11-12T22:05:49.280Z",
+        "reason": "Carried over from ics-site's copy of the same report (identical file): detector reads white type on .cover/.back as white on --paper (#fafaf7) because it cannot see the full-bleed photos; rendered check there found >=5.3:1. Assistant-verified, not user-confirmed."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "spectral",
+        "files": [
+          "26-impact/index.html"
+        ],
+        "createdAt": "2026-11-12T22:05:49.285Z",
+        "reason": "Carried over from ics-site: the impact report is its own print-style piece set in Spectral (self-hosted in 26-impact/fonts). Assistant-verified."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "spectral sc",
+        "files": [
+          "26-impact/index.html"
+        ],
+        "createdAt": "2026-11-12T22:05:49.290Z",
+        "reason": "Carried over from ics-site: Spectral SC is the report's small-caps companion, self-hosted in 26-impact/fonts. Assistant-verified."
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "26-impact/index.html"
+        ],
+        "createdAt": "2026-11-12T22:05:49.295Z",
+        "reason": "Carried over from ics-site: flagged rules are Spectral SC small caps on short labels at .05em. Assistant-verified."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "26-impact/index.html"
+        ],
+        "createdAt": "2026-11-12T22:05:49.299Z",
+        "reason": "Carried over from ics-site: rendered check at 1440 and 390px found no text within 70px of any .sheet bottom; the flush child is the full-bleed photo. Assistant-verified."
+      }
+    ]
+  }
+}
