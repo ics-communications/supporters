@@ -1,0 +1,11 @@
+# macOS AppleDouble and Finder files
+._*
+.DS_Store
+
+# Reference material kept locally, not published
+info/
+
+# Tooling
+__pycache__/
+node_modules/
+.wrangler/

@@ -1,0 +1,4 @@
+# Pages for supporters of the Institute for Christian Studies
+# Search engines and AI assistants are welcome to read and cite this site.
+User-agent: *
+Allow: /
