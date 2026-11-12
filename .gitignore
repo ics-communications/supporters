@@ -2,8 +2,16 @@
 ._*
 .DS_Store
 
-# Reference material kept locally, not published
+# Internal working material, kept locally and never published: the impact report's
+# project workspace (interviews, research brief, registrant spreadsheet, mockups,
+# letter drafts) and the profile notes
 info/
+
+# Word exports and draft PDFs for copy review
+copy-review/
+
+# Impact report PDF builder (internal; its output goes to copy-review/)
+26-impact/make-pdf.mjs
 
 # Tooling
 __pycache__/

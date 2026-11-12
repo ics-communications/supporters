@@ -18,7 +18,7 @@ Static HTML/CSS, the same shape as the sibling ICS repos (perspective, philosoph
 
 ## Product Purpose
 
-To be written from the brief.
+To be written from the brief. First page: the Impact Report 2025–26 at `/26-impact/` (copied from ics-site on 2026-11-12; `make-pdf.mjs` builds its PDF edition into `copy-review/`).
 
 ## Operating Context
 
@@ -29,6 +29,7 @@ To be written from the brief.
 
 - Navigation follows the ICS masthead used on the sister sites (black bar, white uppercase links, red underline). *(inferred)*
 - The footer is the shared ics-site footer, copied directly. *(inferred)*
+- Every page uses the ics-site favicon, `assets/logos/ics-favicon.png` (copied from ics-site), linked as both `icon` and `apple-touch-icon`.
 
 ## Brand Commitments
 
