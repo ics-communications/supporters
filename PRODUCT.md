@@ -18,7 +18,7 @@ Static HTML/CSS, the same shape as the sibling ICS repos (perspective, philosoph
 
 ## Product Purpose
 
-To be written from the brief. The front page (`/`) forwards to the current Impact Report, 2025–26 at `/26-impact/` (copied from ics-site on 2026-11-12; `make-pdf.mjs` builds its PDF edition into `copy-review/`).
+To be written from the brief. The front page (`/`) forwards to the current Impact Report, 2025–26 at `/26-impact/` (copied from ics-site on 2026-11-12; `make-pdf.mjs` builds its PDF edition: drafts into `copy-review/`, the final one as `26-impact/ICS-Impact-Report-2025-26.pdf`, offered by the page's Download links).
 
 ## Operating Context
 
