@@ -12,6 +12,7 @@ copy-review/
 
 # Impact report PDF builder (internal; its output goes to copy-review/)
 26-impact/make-pdf.mjs
+26-annual/make-pdf.mjs
 
 # Tooling
 __pycache__/

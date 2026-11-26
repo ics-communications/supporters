@@ -1,0 +1,1190 @@
+<!doctype html>
+<!-- The Annual Report 2025–26. Its design is the Impact Report's (26-impact/), so a change to the shared look belongs in both.
+     The student profiles live in the Impact Report; this report links to them. PDF: node 26-annual/make-pdf.mjs (not in git). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Annual Report 2025–26 · Institute for Christian Studies</title>
+<link rel="icon" href="../assets/logos/ics-favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/logos/ics-favicon.png">
+<meta name="description" content="The Institute for Christian Studies Annual Report for the fiscal year 2025–26: letters from the Board Chair and the President, our students and programs, the year in review, and five years of finances.">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root {
+    --paper: #FAFAF7;
+    --ink: #161616;
+    --rubric: #C2321E;
+    --grey: #6B6B6B;
+    --hair: color-mix(in srgb, var(--ink) 14%, var(--paper));
+    --leader: color-mix(in srgb, var(--ink) 42%, var(--paper));
+    --ph: #FFEFB0;
+    --measure: 34rem;
+    --ease: cubic-bezier(.16, 1, .3, 1);
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 106.25%; scroll-behavior: smooth; scrollbar-color: var(--rubric) var(--paper); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: Spectral, Georgia, serif; font-size: 1rem; line-height: 1.6; font-variant-numeric: oldstyle-nums proportional-nums; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--rubric); color: var(--paper); }
+  h1, h2, h3, p, figure, blockquote, dl, dd, ol, ul { margin: 0; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration-color: var(--rubric); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+  a:hover { color: var(--rubric); }
+  :focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+  .sc { font-family: "Spectral SC", Spectral, serif; letter-spacing: .05em; font-weight: 500; }
+  .r { color: var(--rubric); }
+  .ph-note { font-style: italic; font-size: .82rem; color: var(--grey); }
+  .ph-note.draft::before { content: "Draft · "; }
+  .ph-note::before { content: "Placeholder · "; font-style: normal; font-family: "Spectral SC", serif; letter-spacing: .05em; color: var(--ink); background: var(--ph); padding: 0 .3em; margin-right: .2em; }
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 1rem; top: 1rem; z-index: 10; background: var(--paper); padding: .4rem .8rem; }
+
+
+  /* Shell and the order rail */
+  .shell { display: block; }
+  .rail { display: none; }
+  @media (min-width: 72rem) {
+    .shell { display: grid; grid-template-columns: 15rem minmax(0, 1fr); }
+    .rail { transition: opacity .5s var(--ease), visibility .5s; }
+    .at-top .rail { opacity: 0; visibility: hidden; }
+    .rail { display: block; position: sticky; top: 0; height: 100vh; padding: 3rem 1.5rem 2rem 2rem; border-right: 1px solid var(--rubric); }
+  }
+  .rail .sc { font-size: .8rem; color: var(--rubric); display: block; margin-bottom: 1.4rem; }
+  .rail .list { position: relative; }
+  .rail ol { list-style: none; padding: 0; }
+  .rail li a { display: grid; grid-template-columns: 2.2rem 1fr; padding: .42rem 0; text-decoration: none; font-size: .92rem; line-height: 1.3; color: var(--grey); transition: color .3s var(--ease); }
+  .rail li a .n { font-family: "Spectral SC", serif; color: var(--rubric); }
+  .rail li a[aria-current="true"] { color: var(--ink); font-weight: 600; }
+  .rail .pdf { position: absolute; bottom: 2rem; left: 2rem; right: 1.5rem; font-size: .88rem; font-style: italic; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .rail, .rail li a, .tocbtn { transition: none; } }
+
+  /* Sheets: flowing sections on screen, fixed pages in print */
+  main { max-width: 70rem; width: 100%; margin: 0 auto; }
+  .tocbtn { position: fixed; right: 1rem; bottom: 1rem; z-index: 5; background: var(--paper); color: var(--rubric); border: 1px solid var(--rubric); padding: .35rem .8rem; font-size: .9rem; text-decoration: none; transition: opacity .4s var(--ease), visibility .4s; }
+  .at-top .tocbtn { opacity: 0; visibility: hidden; }
+  @media (max-width: 71.99rem) { main { padding-bottom: 4rem; } }
+  @media (min-width: 72rem) { .tocbtn { display: none; } }
+  .sheet { position: relative; padding: 5.5rem clamp(1rem, 5vw, 4.5rem); border-bottom: 1px solid var(--hair); scroll-margin-top: 0; }
+  .runhead, .folio { display: none; }
+  h2.section { font-weight: 800; font-size: clamp(2.1rem, 4.5vw, 3rem); line-height: 1.05; letter-spacing: -.01em; text-wrap: balance; margin-bottom: 1.2rem; }
+  h2.section .n { font-family: "Spectral SC", serif; font-weight: 600; color: var(--rubric); margin-right: .35em; }
+  .lede { font-size: 1.25rem; font-style: italic; line-height: 1.45; max-width: 32rem; color: var(--ink); }
+  .versal::first-letter { color: var(--rubric); font-weight: 800; font-size: 3.4em; float: left; line-height: .82; margin: .08em .1em 0 0; }
+  .prose p + p { margin-top: .9em; }
+  .note { font-style: italic; color: var(--rubric); font-size: .84rem; line-height: 1.45; }
+  /* Titles inside the italic notes are set upright, the usual reversal, so they still stand apart */
+  .note i { font-style: normal; }
+  .resp { position: relative; padding-left: 1.6em; font-style: italic; }
+  /* The ICS dove, as used to close each article in Perspective, marks every testimony */
+  .resp::before { --dove: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8.92 10'%3E%3Cpath d='M8.88 3.77C8.92 3.33 8.71 2.88 8.32 2.48C8.29 2.45 8.28 2.44 8.27 2.44C8.27 2.44 8.27 2.45 8.27 2.45C8.14 2.72 7.58 3.88 7.58 3.88C7.58 3.88 7.48 4.04 7.39 3.99C7.32 3.96 7.37 3.83 7.37 3.83L7.79 2.31C7.79 2.31 7.88 1.70 7.16 0.84C7.12 1.45 6.59 2.56 6.59 2.56C6.59 2.56 6.53 2.65 6.45 2.61C6.39 2.58 6.39 2.49 6.39 2.49C6.39 2.49 6.74 1.61 6.72 0.96C6.68 0.50 6.24 0.16 5.73 0.06C5.81 0.56 5.58 1.77 5.58 1.77C5.58 1.77 5.55 1.99 5.41 1.93C5.38 1.91 5.38 1.85 5.38 1.78C5.39 1.51 5.42 0.96 5.35 0.72C5.27 0.32 4.59 0.02 4.04 0.00C4.23 0.40 4.14 1.98 4.12 2.24C4.04 3.14 3.87 3.82 3.87 3.82C3.87 3.82 3.85 3.86 3.83 3.86L3.80 3.86C3.80 3.86 3.05 1.49 3.61 0.84L3.59 0.81C2.84 0.99 2.19 1.32 1.55 1.92C1.26 2.19 0.89 2.71 0.89 2.71C0.67 3.05 0.47 3.48 0.47 3.48C0.41 3.60 0.44 3.71 0.51 3.82C0.58 3.94 0.80 4.00 0.80 4.00L2.34 4.92C2.34 4.92 2.50 5.00 2.49 5.07C2.46 5.15 2.21 5.13 2.21 5.13C2.21 5.13 0.66 5.23 0.00 5.00C0.00 5.56 0.28 6.24 0.67 6.34C1.18 6.46 1.45 6.37 1.73 6.40C1.80 6.41 1.85 6.39 1.88 6.45C1.94 6.58 1.71 6.61 1.71 6.61C1.71 6.61 0.49 6.79 0.00 6.70C0.08 7.21 0.40 7.66 0.87 7.71C1.51 7.76 2.41 7.45 2.41 7.45C2.41 7.45 2.49 7.45 2.52 7.51C2.55 7.59 2.47 7.65 2.47 7.65C2.47 7.65 1.34 8.13 0.72 8.15C1.56 8.90 2.17 8.83 2.17 8.83L3.33 8.56C3.62 8.47 3.83 8.38 3.83 8.38C3.83 8.38 3.92 8.38 3.96 8.45C4.00 8.53 3.91 8.60 3.91 8.60C3.91 8.60 3.66 8.72 3.33 8.86C2.97 9.02 2.46 9.24 2.29 9.32C2.29 9.32 2.28 9.32 2.28 9.32C2.33 9.34 2.34 9.35 2.32 9.37C2.70 9.78 3.14 10.00 3.59 9.98C4.55 9.92 5.55 9.06 6.22 8.91C7.21 8.71 7.65 9.45 8.02 9.95C8.69 9.13 8.10 8.13 7.57 7.49C7.56 7.36 7.56 6.93 7.71 6.36C7.89 5.69 8.78 4.73 8.88 3.77Z'/%3E%3C/svg%3E"); content: ""; position: absolute; left: 0; top: .22em; width: .8em; height: .9em; background: var(--rubric); -webkit-mask: var(--dove) center / contain no-repeat; mask: var(--dove) center / contain no-repeat; }
+
+  /* Cover: the autumn photograph stands in for the paper. Text is white and the rubric's marks turn leaf amber.
+     The type sits in the darkened canopy; the foot of the cover is left clear so the leaves keep their colour. */
+  .cover { --ink: #fff; --grey: rgb(255 255 255 / .86); --rubric: #F4A867; --hair: rgb(255 255 255 / .38); --scrim: 14 11 8; --band: clamp(15rem, 44svh, 24rem);
+    --veil: linear-gradient(to top, rgb(var(--scrim) / 0) 0, rgb(var(--scrim) / .1) calc(var(--band) * .5), rgb(var(--scrim) / .6) calc(var(--band) + 1rem), rgb(var(--scrim) / .64) 100%);
+    display: grid; gap: 2.5rem; align-content: start; padding-top: 3.5rem; padding-bottom: var(--band); border-bottom: 0;
+    color: #fff; isolation: isolate; overflow-y: clip; text-shadow: 0 1px 2px rgb(0 0 0 / .5), 0 0 24px rgb(0 0 0 / .4); }
+  .cover::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: calc(50% - 50vw); width: 100vw;
+    background: var(--veil), url(img/cover-autumn.jpg) 77% 50% / cover no-repeat;
+    background-image: var(--veil), image-set(url(img/cover-autumn.webp) type("image/webp"), url(img/cover-autumn.jpg) type("image/jpeg"));
+    transform-origin: 50% 70%; animation: cover-settle 2.8s cubic-bezier(.16, 1, .3, 1) both; }
+  @keyframes cover-settle { from { transform: scale(1.07); } }
+  @media (prefers-reduced-motion: reduce) { .cover::before { animation: none; } }
+  .shell { overflow-x: clip; }
+  .rail { z-index: 2; background: var(--paper); }
+  .cover .who { font-size: 1rem; }
+  .cover h1 { font-weight: 800; font-size: clamp(3.4rem, 9vw, 5.6rem); line-height: .95; letter-spacing: -.015em; margin: 1.6rem 0 .8rem; }
+  .cover .year { font-size: 1.75rem; }
+  .cover .year .r { white-space: nowrap; }
+  .cover .fn { font-style: normal; margin-right: .1em; }
+  .cover .year .fn { margin: 0 0 0 .04em; font-size: .7em; vertical-align: .45em; line-height: 0; }
+  .cover .motto { font-size: 1.15rem; font-style: italic; line-height: 1.4; margin-top: 3rem; }
+  .cover .motto .r { font-style: normal; font-size: 1.6rem; margin-right: .3rem; }
+  .cover .rule { background: rgb(255 255 255 / .5); }
+  .cover .order h2 { font-size: .95rem; color: var(--rubric); margin-bottom: 1rem; font-weight: 600; }
+  .order ol { list-style: none; padding: 0; }
+  .order li a { display: grid; grid-template-columns: 3rem 1fr 2rem; padding: .62rem 0; border-bottom: 1px solid var(--hair); font-size: 1.15rem; text-decoration: none; }
+  .order li a:hover .t { color: var(--rubric); }
+  .order .n { font-family: "Spectral SC", serif; color: var(--rubric); }
+  .order .pg { text-align: right; color: var(--grey); font-size: .9rem; padding-top: .2rem; font-variant-numeric: tabular-nums oldstyle-nums; }
+  /* Page numbers belong to the PDF only (make-pdf.mjs fills the empty .pg spans); on screen the contents are links */
+  @media screen { .order .pg { display: none; } .order li a { grid-template-columns: 3rem 1fr; } }
+  .cover .fine { font-size: .82rem; font-style: italic; color: rgb(255 255 255 / .9); margin-top: 1.4rem; max-width: 22rem; }
+  .cover .fine a { color: var(--ink); text-decoration-color: var(--rubric); }
+  @media (min-width: 52rem) {
+    .cover { --band: clamp(12rem, 30svh, 20rem); grid-template-columns: 1fr 1px 1fr; gap: 3.5rem; min-height: 100svh; padding-top: clamp(4rem, 13svh, 8rem); }
+    .cover::before { background-position: 0 0, 50% 72%; }
+  }
+  @media (min-width: 72rem) { .cover::before { left: calc(50% - 50vw - 7.5rem); } }
+  /* The cover photograph ends on a rubric line at the seam. */
+  .foot-rule { position: absolute; z-index: 1; bottom: 0; left: calc(50% - 50vw); width: 100vw; height: 3px; background: #C2321E; pointer-events: none; }
+  @media (min-width: 72rem) { .foot-rule { left: calc(50% - 50vw - 7.5rem); } }
+
+  /* Letter */
+  .letter { display: grid; gap: 2rem; }
+  .letter .prose { max-width: var(--measure); }
+  /* The letter opens on Beth's photograph, bled to the sheet edge, with the heading set in white at its foot over the dark robes.
+     It borrows the cover's photographic grammar: white type, leaf amber for the numeral, and a warm-black veil only under the type. */
+  .letter .head { position: relative; display: grid; margin: 0 calc(-1 * clamp(1rem, 5vw, 4.5rem)); }
+  .letter .portrait { position: relative; grid-area: 1 / 1; }
+  .letter .portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(14 11 8 / .66) 0, rgb(14 11 8 / .4) 22%, rgb(14 11 8 / 0) 52%); }
+  .letter .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; }
+  /* On phones the subtitle sits on the paper under the photo, so the heading keeps to the dark robes. */
+  .letter .head h2 { grid-area: 1 / 1; align-self: end; z-index: 1; margin: 0 clamp(1rem, 5vw, 4.5rem) 1.1rem; color: #fff; text-shadow: 0 1px 2px rgb(0 0 0 / .5), 0 0 24px rgb(0 0 0 / .4); }
+  /* The rubric, lifted a step so the numeral holds against the maroon robe (#C2321E measures 2:1 there). */
+  .letter .head h2 .n { color: #E8503C; }
+  .letter .head .lede { margin: 1.2rem clamp(1rem, 5vw, 4.5rem) 0; }
+  .letter .ph-note { margin: 0 0 1.4rem; }
+  .letter .sig { margin-top: 1.6rem; font-style: italic; }
+  .letter .sig b { font-style: normal; font-weight: 600; display: block; font-size: 1.15rem; }
+  @media (min-width: 52rem) {
+    .letter { grid-template-columns: 5fr 7fr; gap: 3.5rem; }
+    .letter .head { margin: 0 0 0 calc(-1 * clamp(1rem, 5vw, 4.5rem)); height: 44rem; align-self: start; }
+    .letter .portrait { position: absolute; inset: 0; }
+    .letter .portrait img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 45% 100%; }
+    .letter .head { display: flex; flex-direction: column; justify-content: flex-end; }
+    .letter .head h2 { margin: 0 2rem 0 clamp(1rem, 5vw, 4.5rem); }
+    .letter .head .lede { position: relative; z-index: 1; margin: .7rem 2rem 2.4rem clamp(1rem, 5vw, 4.5rem); max-width: 24rem; color: #fff; text-shadow: 0 1px 2px rgb(0 0 0 / .5), 0 0 24px rgb(0 0 0 / .4); }
+  }
+
+
+  .story { display: grid; gap: 2rem; }
+  .story .prose { max-width: var(--measure); }
+  .story aside p + p { margin-top: 1.2rem; }
+  @media (min-width: 52rem) { .story { grid-template-columns: minmax(0, var(--measure)) 11rem; gap: 3.5rem; } }
+
+  /* Letter continuation sheets (PDF only, built by make-pdf.mjs) are set like the Impact Report's story pages */
+  .story { display: grid; gap: 2rem; }
+  .story .prose { max-width: var(--measure); }
+  @media (min-width: 52rem) { .story { grid-template-columns: minmax(0, var(--measure)) 11rem; gap: 3.5rem; } }
+
+  /* Ledgers and bars */
+  .glance { display: grid; gap: 3rem; margin-top: 2.6rem; }
+  @media (min-width: 52rem) { .glance { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+  .glance h3, .fin h3, .trend h3 { font-family: "Spectral SC", serif; font-weight: 600; letter-spacing: .05em; font-size: .95rem; color: var(--rubric); margin-bottom: .9rem; padding-bottom: .4rem; border-bottom: 1px solid var(--rubric); }
+  .ledger div { display: flex; align-items: baseline; gap: .5rem; padding: .38rem 0; }
+  .ledger dt { flex: none; }
+  .ledger div::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted var(--leader); transform: translateY(-.25em); }
+  .ledger dd { order: 2; font-variant-numeric: lining-nums tabular-nums; font-weight: 600; }
+  .src { font-size: .82rem; font-style: italic; color: var(--grey); margin-top: .9rem; }
+  .bars { display: grid; gap: .55rem; }
+  .bar { display: grid; grid-template-columns: 4.4rem 1fr 2.4rem; align-items: center; gap: .6rem; position: relative; outline-offset: 2px; }
+  .bar .yr { font-size: .9rem; color: var(--grey); font-variant-numeric: lining-nums tabular-nums; }
+  .bar .track { height: .6rem; }
+  .bar .fill { display: block; height: 100%; width: calc(var(--v) / var(--max) * 100%); background: var(--ink); }
+  .bar.now .fill { background: var(--rubric); }
+  .bar .v { text-align: right; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; }
+  .bar[data-tip]:hover::after, .bar[data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: 5rem; bottom: calc(100% + .3rem); background: var(--ink); color: var(--paper); font-size: .8rem; padding: .25rem .55rem; white-space: nowrap; z-index: 2; }
+  /* A year still under way: solid to what has happened (--at), hatched on to the projection, an ink tick where one becomes the other */
+  .bar.proj { margin-top: 1.3rem; }
+  .bar.proj .track { position: relative; display: flex; }
+  .bar.proj .fill { flex: none; width: calc(var(--at) / var(--max) * 100%); }
+  .bar.proj .ahead { flex: none; height: 100%; width: calc((var(--v) - var(--at)) / var(--max) * 100%); background: repeating-linear-gradient(-45deg, var(--leader) 0 1px, transparent 1px 4px); box-shadow: inset 0 0 0 1px var(--leader); }
+  .bar.proj .mark { position: absolute; left: calc(var(--at) / var(--max) * 100%); top: -.4rem; bottom: -.4rem; border-left: 2px solid var(--ink); }
+  .bar.proj .mark span { position: absolute; bottom: calc(100% + .1rem); font-size: .74rem; font-style: italic; line-height: 1; color: var(--grey); white-space: nowrap; }
+  .bar.proj .mark .past { right: .35rem; }
+  .bar.proj .mark .next { left: .35rem; }
+  .bar.proj .v { font-style: italic; }
+  .bar.proj[data-tip]:hover::after, .bar.proj[data-tip]:focus-visible::after { bottom: calc(100% + 1.2rem); right: 0; white-space: normal; }
+
+  /* Year in review */
+  .yir { display: grid; gap: 2.5rem; margin-top: 2.6rem; }
+  .cal { list-style: none; padding: 0; columns: 1; column-gap: 3rem; }
+  .cal li { break-inside: avoid; display: grid; grid-template-columns: 5.5rem 1fr; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--hair); }
+  .cal .m { font-family: "Spectral SC", serif; color: var(--rubric); font-size: .92rem; padding-top: .1rem; }
+  .cal b { font-weight: 600; }
+  .yir figure img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 84%; }
+  .yir figcaption { font-size: .82rem; font-style: italic; color: var(--grey); margin-top: .5rem; }
+  @media (min-width: 52rem) { .yir { grid-template-columns: 8fr 4fr; gap: 3.5rem; } .cal { columns: 2; } }
+  /* The photo runs the calendar's full height, its caption ending level with the last entry, in a portrait crop of the full chapel.
+     Where the calendar wraps tall, the photo stops at twice its width rather than thinning to a strip. */
+  @media screen and (min-width: 52rem) {
+    .yir figure { display: flex; flex-direction: column; container-type: inline-size; }
+    .yir figure img { flex: 1 1 0; min-height: 0; max-height: 200cqi; aspect-ratio: auto; object-position: 50% 50%; }
+  }
+
+  /* Learning in public */
+  .reach { display: grid; gap: 2rem; margin-top: 2.6rem; }
+  @media (min-width: 52rem) { .reach { grid-template-columns: minmax(0, 40rem) 11rem; gap: 3.5rem; } }
+  .rlist { list-style: none; padding: 0; }
+  .rlist li { padding: .9rem 0; border-top: 1px solid var(--hair); }
+  .rlist .row { display: flex; align-items: baseline; gap: .5rem; font-size: 1.12rem; font-weight: 600; }
+  .rlist .row::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted var(--leader); transform: translateY(-.25em); }
+  .rlist .v { order: 2; font-variant-numeric: lining-nums tabular-nums; }
+  .rlist p { color: var(--grey); font-size: .95rem; margin-top: .2rem; max-width: 32rem; }
+
+  /* Thanks */
+  .thanks { display: grid; gap: 3rem; margin-top: 2.6rem; }
+  @media (min-width: 52rem) { .thanks { grid-template-columns: 7fr 5fr; gap: 4rem; } }
+  .thanks .prose { max-width: var(--measure); }
+  .events h3, .contact h3 { font-family: "Spectral SC", serif; font-weight: 600; letter-spacing: .05em; font-size: .95rem; color: var(--rubric); margin-bottom: .6rem; }
+  .events ol { list-style: none; padding: 0; }
+  .events li { display: grid; grid-template-columns: 5.5rem 1fr; gap: .8rem; padding: .6rem 0; border-top: 1px solid var(--hair); }
+  .events .d { font-family: "Spectral SC", serif; color: var(--rubric); font-size: .92rem; }
+  .events em { display: block; color: var(--grey); font-size: .9rem; }
+  .contact { margin-top: 2.2rem; font-size: .95rem; }
+
+  /* Finances */
+  .fin { display: grid; gap: 3rem; margin-top: 2.4rem; }
+  @media (min-width: 52rem) { .fin { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+  .fin table { width: 100%; border-collapse: collapse; font-variant-numeric: lining-nums tabular-nums; }
+  .fin caption { text-align: left; }
+  .fin th, .fin td { text-align: left; font-weight: 400; padding: .42rem 0; border-bottom: 1px solid var(--hair); vertical-align: middle; }
+  .fin td.amt { text-align: right; padding-left: 1rem; white-space: nowrap; }
+  .fin td.share { width: 24%; padding-left: 1rem; }
+  .fin .sbar { display: block; height: .5rem; width: calc(var(--p) * 1%); background: var(--ink); }
+  .fin tr.total th, .fin tr.total td, .fin tfoot th, .fin tfoot td { font-weight: 600; border-bottom: 2px solid var(--ink); border-top: 1px solid var(--ink); }
+  .fin .net { margin-top: 1.2rem; display: flex; justify-content: space-between; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; }
+  .fin thead th { font-size: .8rem; font-style: italic; color: var(--grey); text-align: right; padding-left: 1rem; white-space: nowrap; }
+  .fin thead th:first-child { text-align: left; padding-left: 0; }
+  .fin td.prev { color: var(--grey); }
+  .fin tr.sub th { padding-left: 1.2em; color: var(--grey); white-space: nowrap; }
+  /* Accounts layout: category heading without a figure, indented components, a ruled subtotal */
+  /* Components sit in an inner figure column, one step left of the main one; only the subtotal steps out,
+     so the main column adds straight down to the total. One short rule under the last component. */
+  .fin { --inner: 6ch; }
+  #fin-detail .fin { --inner: 0ch; } /* two comparative years: no room for an inner column, so components and subtotal share each year's column */
+  .fin tr.head th { border-bottom: 0; padding-bottom: 0; }
+  .fin tr.sub th, .fin tr.sub td { border-bottom: 0; padding-top: .1rem; padding-bottom: .1rem; }
+  .fin tr.sub td.amt { padding-right: var(--inner); }
+  .fin tr.sub:has(+ tr.subtotal) td.amt { padding-bottom: .35rem; background: linear-gradient(var(--ink), var(--ink)) no-repeat left 1rem bottom 0 / calc(100% - 1rem - var(--inner)) 1px; }
+  .fin tr.group th { font-family: "Spectral SC", serif; letter-spacing: .05em; font-weight: 600; padding-top: 1.2rem; }
+  #position .fin-notes { margin-top: 0; }
+  @media (max-width: 40rem) { .fin td.share, .fin thead th.share { display: none; } }
+  .fin-notes { margin-top: 2.4rem; display: grid; gap: 1rem; max-width: 50rem; font-size: .9rem; color: var(--grey); font-style: italic; }
+  /* General donations over six years: one ink line on a zero baseline, each year marked and labelled; this year's point is rubric. */
+  .trend { margin: 3rem 0 0; }
+  .trend .plot { position: relative; height: 11rem; margin: 2.2rem 5px 2.6rem; font-variant-numeric: lining-nums tabular-nums; }
+  .trend .base { position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid var(--hair); }
+  .trend svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .trend polyline { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: miter; vector-effect: non-scaling-stroke; }
+  .trend .pt { position: absolute; left: calc(var(--i) / 3 * 100%); bottom: calc(var(--v) / var(--max) * 100%); width: 1.6rem; height: 1.6rem; transform: translate(-50%, 50%); outline-offset: 2px; }
+  .trend .pt::before { content: ""; position: absolute; inset: calc(50% - 3.5px); background: var(--ink); }
+  .trend .pt.now::before { inset: calc(50% - 4.5px); background: var(--rubric); }
+  .trend .v { position: absolute; left: 50%; bottom: 100%; transform: translateX(-50%); font-size: .85rem; font-weight: 600; white-space: nowrap; }
+  .trend .pt.start .v { left: calc(50% - 3.5px); transform: none; }
+  .trend .pt.below .v { bottom: auto; top: 100%; }
+  .trend .pt.now .v { left: auto; right: calc(50% - 4.5px); transform: none; }
+  .trend .yr { position: absolute; top: calc(100% + .6rem); left: calc(var(--i) / 3 * 100%); transform: translateX(-50%); font-size: .82rem; color: var(--grey); white-space: nowrap; }
+  .trend .yr.start { transform: none; }
+  .trend .yr.end { transform: translateX(-100%); }
+  .trend .pt[data-tip]:hover::after, .trend .pt[data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: 50%; bottom: calc(100% + 1.4rem); transform: translateX(-50%); background: var(--ink); color: var(--paper); font-size: .8rem; font-weight: 400; padding: .25rem .55rem; white-space: nowrap; z-index: 2; }
+  .trend .pt.start[data-tip]:hover::after, .trend .pt.start[data-tip]:focus-visible::after { left: 50%; transform: none; }
+  .trend .pt.now[data-tip]:hover::after, .trend .pt.now[data-tip]:focus-visible::after { left: auto; right: 50%; transform: none; }
+  @media (max-width: 40rem) {
+    /* Narrow columns: inset the plot and centre the end labels so the six years space evenly. */
+    .trend .plot { height: 9rem; margin-inline: 1.4rem; }
+    .trend .v, .trend .yr { font-size: .7rem; }
+    .trend .pt.start .v, .trend .yr.start, .trend .yr.end { left: calc(var(--i) / 3 * 100%); transform: translateX(-50%); }
+    .trend .pt.start .v { left: 50%; }
+  }
+
+  /* Back */
+  /* The back cover answers the front: the windows photograph bleeds edge to edge, with the same white type and leaf-amber marks.
+     The veil pools at the foot, where the address sits, and lets the upper windows keep their detail. A rubric line marks the seam above. */
+  .back { --ink: #fff; --grey: rgb(255 255 255 / .86); --rubric: #F4A867; --hair: rgb(255 255 255 / .38); --scrim: 14 11 8;
+    --veil: linear-gradient(to top, rgb(var(--scrim) / .88) 0, rgb(var(--scrim) / .7) 34%, rgb(var(--scrim) / .22) 68%, rgb(var(--scrim) / .08) 100%);
+    min-height: clamp(32rem, 86svh, 50rem); display: grid; align-content: end; gap: 2.2rem; border-bottom: 0;
+    color: #fff; isolation: isolate; overflow-y: clip; text-shadow: 0 1px 2px rgb(0 0 0 / .5), 0 0 24px rgb(0 0 0 / .4); }
+  .back::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: calc(50% - 50vw); width: 100vw;
+    transform-origin: 50% 30%; transition: transform 2.8s var(--ease);
+    background: var(--veil), url(img/back-windows.jpg) 50% 42% / cover no-repeat;
+    background-image: var(--veil), image-set(url(img/back-windows.webp) type("image/webp"), url(img/back-windows.jpg) type("image/jpeg")); }
+  .back::after { content: ""; position: absolute; top: 0; left: calc(50% - 50vw); width: 100vw; height: 3px; background: #C2321E; pointer-events: none; }
+  @media (min-width: 72rem) { .back::before, .back::after { left: calc(50% - 50vw - 7.5rem); } }
+  .back .motto { font-size: 1.5rem; font-style: italic; line-height: 1.35; }
+  .back .motto .r { font-style: normal; }
+  /* As the photograph scrolls in, it settles once, the way the cover's does on load. The class is set by script and cleared on arrival. */
+  .back.pre::before { transform: scale(1.07); }
+  @media (prefers-reduced-motion: reduce) { .back::before { transition: none; } }
+  /* The two columns and the rule between them sit where the cover's do, so the sheets read as one spread. */
+  .back .mark { display: block; width: clamp(6.5rem, 10vw, 9.5rem); height: auto; margin-bottom: 1.6rem; }
+  .back .rule { display: none; background: rgb(255 255 255 / .5); }
+  @media (min-width: 52rem) {
+    .back { grid-template-columns: 1fr 1px 1fr; gap: 3.5rem; align-items: end; }
+    .back .rule { display: block; align-self: stretch; }
+  }
+  .back address { font-style: normal; font-size: 1.05rem; line-height: 1.7; }
+  .back address .sc { display: block; font-size: 1.4rem; line-height: 1.35; margin-bottom: .35rem; text-wrap: balance; }
+  .back address a { color: var(--ink); text-decoration-color: var(--rubric); text-decoration-thickness: 1.5px; font-size: 1.12em; }
+  .back address a:hover { color: var(--rubric); }
+  .back .legal { font-size: .9rem; line-height: 1.65; color: var(--grey); max-width: 30rem; }
+  .back .legal .nb { white-space: nowrap; }
+  /* ---------- PDF edition: read on screen, never printed ----------
+     One sheet per page at 16:9, 1440 × 810 CSS px (15 × 8.4375 in). A laptop PDF viewer at fit-width shows
+     the page at roughly 1:1, so sizes below are screen pixels: running text 19px, nothing under 13px.
+     RGB only, no bleed or crop marks. make-pdf.mjs renders this from the page itself: it splits the letter
+     over two sheets, numbers the pages and the contents, rewrites links to the live site, adds the outline,
+     and (unless run with --final) sets html.pdf-draft, which adds the draft tags and highlights placeholders. */
+  @page { size: 1440px 810px; margin: 0; }
+  @media print {
+    html { font-size: 16px; scroll-behavior: auto; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .rail, .skip, .screen-only, .tocbtn { display: none !important; }
+    .shell { display: block; }
+    main { max-width: none; padding-bottom: 0 !important; }
+    .sheet { width: 1440px; height: 810px; padding: 76px 96px 64px; border: 0; overflow: hidden; break-after: page; page-break-after: always; }
+    /* Page furniture: the section in the running head, the page number once, in the folio */
+    .runhead { display: block; position: absolute; top: 30px; left: 96px; right: 96px; font-size: 13px; line-height: 1.3; color: var(--grey); }
+    .runhead > span:last-child { display: none; }
+    .runhead .sc { color: var(--ink); }
+    .folio { display: block; position: absolute; bottom: 26px; right: 96px; left: 96px; font-size: 13px; line-height: 1.3; font-style: italic; color: var(--grey); text-align: right; }
+    h2.section { font-size: 3.1rem; margin-bottom: .9rem; }
+    .lede { font-size: 1.4rem; max-width: 40rem; }
+
+    /* Draft edition only (make-pdf.mjs without --final): a tag in the same corner of every page, placeholders in yellow */
+    .draftmark { position: absolute; z-index: 4; top: 27px; right: 112px; font-family: "Spectral SC", Spectral, serif; font-weight: 500; letter-spacing: .05em; font-size: 13px; line-height: 1.3; color: #161616; background: var(--ph); padding: 1px 10px 2px; white-space: nowrap; text-shadow: none; }
+    html.pdf-draft .ph { background: var(--ph); color: var(--ink); padding: 0 .2em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+    /* Cover */
+    .cover { --band: 6rem; min-height: 0; grid-template-columns: 1fr 1px 1fr; gap: 80px; padding: 104px 112px 96px; align-content: stretch; }
+    .cover::before { left: 0; width: 100%; animation: none; background-image: var(--veil), url(img/cover-autumn.jpg); }
+    .cover .titleblock { position: relative; }
+    .cover .who { font-size: 1.1rem; }
+    .cover h1 { font-size: 7rem; margin: 1.8rem 0 1rem; }
+    .cover .year { font-size: 2rem; }
+    .cover .order h2 { font-size: 1.05rem; margin-bottom: 1.1rem; }
+    .order li a { padding: .8rem 0; font-size: 1.3rem; }
+    .order .pg { font-size: 1rem; }
+    .cover .fine { font-size: .9rem; max-width: 28rem; }
+    /* The phone pointer, added by make-pdf.mjs: set at the contents' size so it can be read at phone scale */
+    .cover .phone { margin-top: .8rem; font-size: 1.3rem; line-height: 1.35; color: #fff; max-width: none; }
+    .cover .phone a { display: inline-block; padding: .6rem .5rem; margin: -.4rem -.5rem; color: #fff; text-decoration: underline; text-decoration-color: #F4A867; text-decoration-thickness: 1px; text-underline-offset: .2em; white-space: nowrap; }
+    .foot-rule { left: 0; width: 100%; }
+
+    /* i. Letter: an opener like the profiles (portrait down the left, the letter beginning beside it at reading size),
+       then a continuation sheet set like the stories. make-pdf.mjs moves the overflow to the continuation sheet. */
+    #letter { padding: 0; }
+    #letter .letter { grid-template-columns: 620px 1fr; gap: 96px; height: 810px; align-items: stretch; }
+    #letter .head { margin: 0; min-height: 0; height: auto; align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; }
+    #letter .portrait { position: absolute; inset: 0; margin: 0; }
+    #letter .portrait::after { background: linear-gradient(to top, rgb(14 11 8 / .84) 0, rgb(14 11 8 / .62) 30%, rgb(14 11 8 / 0) 62%); }
+    #letter .portrait img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 42% 50%; }
+    #letter .head h2 { align-self: auto; margin: 0 64px 0 72px; font-size: 3.4rem; }
+    #letter .head h2 .n { color: #F4A867; }
+    #letter .head .lede { position: relative; z-index: 1; font-size: 1.3rem; max-width: none; margin: 14px 64px 60px 72px; color: #fff; text-shadow: 0 1px 2px rgb(0 0 0 / .5), 0 0 24px rgb(0 0 0 / .4); }
+    #letter .prose { max-width: none; min-height: 0; padding: 84px 104px 0 0; font-size: 1.25rem; line-height: 1.7; }
+    #letter .runhead, #letter .folio { left: 716px; }
+    .letter-cont .sig { margin-top: 1.6rem; font-style: italic; break-inside: avoid; }
+    .letter-cont .sig b { display: block; font-style: normal; font-weight: 600; font-size: 1.3rem; }
+    .letter-cont .prose p.cont { margin-top: 0; }
+
+    /* Each story continues on the facing page, in two columns at reading size, with its notes in the margin */
+    .feature-b { padding-top: 84px; }
+    .story { grid-template-columns: 1fr 232px; gap: 64px; }
+    .story .prose .versal { margin-top: 0 !important; }
+    .story .prose { max-width: none; columns: 2; column-gap: 56px; font-size: 1.1875rem; line-height: 1.62; }
+    .story aside { padding-top: .35em; }
+    .story aside .note, .story aside .ph-note { font-size: 1rem; line-height: 1.45; }
+    /* The letters' continuations have no margin notes: the two columns take the full measure */
+    .letter-cont .story { grid-template-columns: 1fr; }
+    .letter-cont .story aside { display: none; }
+    .letter-cont .story .prose { column-gap: 72px; font-size: 1.1875rem; line-height: 1.52; }
+
+    #students, #courses, #donors, #five, #year, #public, #thanks, #finances, #fin-detail, #position { display: flex; flex-direction: column; }
+    .yir, .fin { flex: 1; align-content: center; }
+    .src { font-size: .9rem; }
+
+    /* iii. Glance: three full-height panels; the enrolment bars stand up the height of their panel */
+    .glance { flex: 1; grid-template-columns: repeat(3, 1fr); gap: 80px; margin: 2.6rem 0 1.4rem; align-items: stretch; }
+    .glance > div { display: flex; flex-direction: column; min-height: 0; }
+    .glance h3, .fin h3, .trend h3 { font-size: 1.05rem; margin-bottom: 1.2rem; }
+    .glance h3 { font-size: 1.25rem; margin-bottom: 1.4rem; }
+    .ledger div { padding: .5rem 0; font-size: 1.2rem; }
+    .glance .ledger { flex: 1; display: flex; flex-direction: column; }
+    .glance .ledger div { flex: 1; align-items: center; padding: 0; font-size: 1.3rem; border-bottom: 1px solid var(--hair); }
+    .glance .ledger div::after { content: none; }
+    .glance .ledger dd { margin-left: auto; padding-left: .75rem; }
+    .bars { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; align-items: stretch; }
+    .bar { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: .6rem; }
+    .bar .v { order: 0; font-size: 1.9rem; line-height: 1; text-align: center; }
+    .bar .track { order: 1; flex: none; width: 100%; height: auto; display: block; }
+    .bar .fill { display: block; width: 100%; height: calc(var(--v) / var(--max) * 268px); }
+    .bar .yr { order: 2; font-size: 1.15rem; }
+    .bar.proj { margin-top: 0; }
+    .bar.proj .track { display: flex; flex-direction: column-reverse; }
+    .bar.proj .fill { width: 100%; height: calc(var(--at) / var(--max) * 268px); }
+    .bar.proj .ahead { width: 100%; height: calc((var(--v) - var(--at)) / var(--max) * 268px); }
+    .bar.proj .mark { left: -7px; right: -7px; top: auto; bottom: calc(var(--at) / var(--max) * 268px - 1px); border-left: 0; border-top: 2px solid var(--ink); }
+    .bar.proj .mark span { text-align: center; font-size: .85rem; }
+    .bar.proj .mark .next { left: 50%; transform: translateX(-50%); bottom: .45rem; background: var(--paper); padding: .1rem .3rem; }
+    .bar.proj .mark .past { left: 0; right: 0; bottom: auto; top: .45rem; color: var(--paper); }
+
+    /* iv. Year in review: the calendar in two columns, the chapel photograph running its full height */
+    .yir { grid-template-columns: 1fr 400px; gap: 64px; margin-top: 1.2rem; align-items: stretch; }
+    .cal { columns: 2; column-gap: 48px; }
+    .cal li { padding: .7rem 0; grid-template-columns: 5.6rem 1fr; gap: .7rem; font-size: 1.05rem; line-height: 1.4; }
+    .cal .m { font-size: 1rem; }
+    .yir figure { display: flex; flex-direction: column; min-height: 0; }
+    .yir figure img { flex: 1 1 0; min-height: 0; height: auto; aspect-ratio: auto; width: 100%; object-fit: cover; object-position: 50% 50%; }
+    .yir figcaption { font-size: .9rem; line-height: 1.4; }
+
+    /* v. Learning in public: the four figures as display numerals, two by two */
+    .reach { grid-template-columns: 1fr; margin: auto 0; }
+    .rlist { display: grid; grid-template-columns: 1fr 1fr; column-gap: 96px; }
+    .rlist li { padding: 1.6rem 0 2rem; }
+    .rlist .row { flex-direction: column-reverse; align-items: flex-start; gap: .5rem; font-size: 1.45rem; }
+    .rlist .row::after { display: none; }
+    .rlist .v { font-size: 5.2rem; font-weight: 800; line-height: .95; letter-spacing: -.01em; }
+    .rlist p { font-size: 1.15rem; margin-top: .35rem; }
+
+    /* vi. Thanks: the prose over a photograph from Convocation (added by make-pdf.mjs), level with the contact block */
+    .thanks { flex: 1; grid-template-columns: 1fr 440px; gap: 112px; margin-top: 2.2rem; align-items: stretch; }
+    .thanks .prose { display: flex; flex-direction: column; font-size: 1.3rem; line-height: 1.65; max-width: none; }
+    .thanks .prose .versal { margin-top: 0 !important; }
+    .thanks .prose p { max-width: 40rem; }
+    .thanks-photo { flex: 1 1 0; min-height: 0; margin: 1.8rem 0 0; }
+    .thanks-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+    .thanks > div:last-child { display: flex; flex-direction: column; }
+    .thanks .contact { margin-top: auto; }
+    .events h3, .contact h3 { font-size: 1.05rem; }
+    .events li { grid-template-columns: 6.2rem 1fr; padding: .9rem 0; font-size: 1.15rem; }
+    .events .d { font-size: 1.05rem; }
+    .events em { font-size: 1rem; }
+    .contact { font-size: 1.1rem; }
+
+    /* vii. Finances: two tables, and under them the trend and the notes on the same two columns */
+    .fin { grid-template-columns: 1fr 1fr; gap: 96px; margin-top: 0; }
+    .fin th, .fin td { padding: .3rem 0; font-size: 1.05rem; }
+    .fin td.amt, .fin thead th { padding-left: 1rem; }
+    .fin td.share { width: 22%; padding-left: 1.4rem; }
+    .fin .sbar { height: .7rem; }
+    .fin tr.sub th, .fin tr.sub td { padding-top: .05rem; padding-bottom: .05rem; }
+    .fin tr.group th { padding-top: 1.6rem; }
+    .fin tr.head th { padding-top: 0; padding-bottom: 0; }
+    .fin thead th { font-size: .9rem; padding-bottom: .4rem; }
+    .fin .net { font-size: 1.1rem; margin-top: 1.2rem; }
+    #finances .fin { flex: 0 1 auto; margin-top: 1.3rem; }
+    #finances .fin-foot { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: end; }
+    .trend { margin: 0; }
+    .trend .plot { height: 80px; margin: 40px 24px 26px; }
+    .trend .v { font-size: .95rem; }
+    .trend .yr { font-size: .9rem; }
+    .fin-notes { font-size: 1rem; max-width: none; }
+    #finances .fin-notes { grid-template-columns: 1fr; gap: .8rem; margin: 0; }
+    #position .fin-notes { grid-template-columns: 1fr; margin: 0; align-self: center; font-size: 1.05rem; }
+
+    /* Back */
+    .back { min-height: 0; grid-template-columns: 1fr 1px 1fr; gap: 80px; align-content: end; align-items: end; padding: 104px 112px 96px; break-after: auto; page-break-after: auto; }
+    .back .rule { display: block; align-self: stretch; }
+    .back .mark { width: 140px; margin-bottom: 1.4rem; }
+    .back::before { left: 0; width: 100%; transform: none; transition: none; background-image: var(--veil), url(img/back-windows.jpg); }
+    .back::after { left: 0; width: 100%; }
+    .back .legal { font-size: 1rem; }
+  }
+  /* ---------- Annual Report additions, in the Impact Report's world ---------- */
+
+  /* Sheets that continue a section have no heading of their own: no rule above them, and a shorter gap. */
+  @media screen {
+    #students, #stories, #finances, #five, #donors, #fin-detail { border-bottom: 0; }
+    #stories, #courses, #five, #donors, #fin-detail, #position { padding-top: 0; }
+  }
+
+  /* Signatures: ink on the paper, sized by height so the two hands sit at the same weight */
+  .sig img { width: auto; height: auto; max-height: 3.2rem; max-width: 15rem; margin: .7rem 0 .45rem; }
+
+  /* i. The Board Chair's letter: a quieter opener than the President's. The heading and a small portrait
+     hold the left column; the letter reads at full measure beside them. */
+  .chair { display: grid; gap: 2rem; }
+  .chair .head h2.section { margin-bottom: 1rem; }
+  .chair .who { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: end; margin-top: 2rem; }
+  .chair .who img { width: 5.5rem; height: 5.5rem; object-fit: cover; object-position: 50% 30%; }
+  .chair .who figcaption { font-size: .9rem; font-style: italic; color: var(--grey); line-height: 1.35; }
+  .chair .who b { display: block; font-style: normal; font-weight: 600; color: var(--ink); font-size: 1.05rem; }
+  .chair .prose { max-width: var(--measure); }
+  .chair .prose ul { margin: .9em 0; padding-left: 1.1em; }
+  .chair .prose li { padding-left: .3em; }
+  .chair .prose li::marker { color: var(--rubric); }
+  .chair .prose li + li { margin-top: .7em; }
+  .chair .sig, .letter .sig { margin-top: 1.6rem; font-style: italic; }
+  .chair .sig b, .letter .sig b { display: block; font-style: normal; font-weight: 600; font-size: 1.15rem; }
+  @media (min-width: 52rem) {
+    .chair { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 3.5rem; }
+    .chair .head { position: sticky; top: 3rem; align-self: start; }
+  }
+
+  /* iii. Programs: one bar per fall, the PhD share in rubric at its root, master's and certificates in ink after it */
+  .bars.stack .track { display: flex; }
+  .bars.stack .phd { flex: none; height: 100%; width: calc(var(--p) / var(--max) * 100%); background: var(--rubric); }
+  .bars.stack .fill { flex: none; width: calc((var(--v) - var(--p)) / var(--max) * 100%); }
+  .key { display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; align-items: center; margin-top: .9rem; font-size: .85rem; color: var(--grey); }
+  .key .sw { display: inline-block; width: .75rem; height: .75rem; background: var(--ink); vertical-align: -.05em; margin-right: .35rem; }
+  .key .sw.phd { background: var(--rubric); }
+  .findings { list-style: none; padding: 0; }
+  .findings li { padding: .55rem 0; border-top: 1px solid var(--hair); line-height: 1.45; }
+  .findings li:first-child { border-top: 0; padding-top: 0; }
+  .findings b { font-weight: 600; font-variant-numeric: lining-nums; }
+
+  /* iii. Three stories, told in full in the Impact Report */
+  .teasers { display: grid; gap: 3rem; margin-top: 2.6rem; }
+  @media (min-width: 40rem) and (max-width: 51.99rem) { .teasers { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 52rem) { .teasers { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+  .teaser { display: flex; flex-direction: column; }
+  .teaser figure { aspect-ratio: 4 / 5; overflow: hidden; background: var(--ink); margin-bottom: 1.2rem; }
+  .teaser figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+  .teaser:hover figure img { transform: scale(1.03); }
+  .teaser h3 { font-weight: 800; font-size: 1.75rem; line-height: 1.05; letter-spacing: -.01em; }
+  .teaser .meta { font-style: italic; color: var(--grey); font-size: .95rem; line-height: 1.4; margin: .4rem 0 1.1rem; }
+  .teaser blockquote { font-size: 1.15rem; line-height: 1.4; }
+  .teaser .more { margin-top: auto; padding-top: 1.1rem; font-family: "Spectral SC", serif; letter-spacing: .05em; font-weight: 500; font-size: .95rem; color: var(--rubric); text-decoration: none; }
+  .teaser .more:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  @media (prefers-reduced-motion: reduce) { .teaser figure img { transition: none; } }
+
+  /* vi. Five years: one table, years across; the current year in ink, earlier years in grey */
+  .five .fin { grid-template-columns: 1fr; --inner: 0ch; margin-top: 2.4rem; }
+  .five .scroll { overflow-x: auto; }
+  .five .scroll:focus-visible { outline-offset: 6px; }
+  .five table { min-width: 40rem; }
+  /* Long program names wrap rather than push their figure out of the column */
+  .ledger dt { flex: 0 1 auto; }
+  .fin thead th.cur { color: var(--ink); font-weight: 600; font-style: normal; }
+  .five tr.sub th { white-space: normal; }
+  /* Revenues less expenditures, hanging from a zero line: the deficit drawn as a depth */
+  .hang { margin: 3rem 0 0; }
+  .hang h3 { font-family: "Spectral SC", serif; font-weight: 600; letter-spacing: .05em; font-size: .95rem; color: var(--rubric); margin-bottom: .9rem; padding-bottom: .4rem; border-bottom: 1px solid var(--rubric); }
+  .hang .cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(.6rem, 2vw, 1.4rem); font-variant-numeric: lining-nums tabular-nums; }
+  .hang .col { display: flex; flex-direction: column; outline-offset: 3px; }
+  .hang .yr { font-size: .85rem; color: var(--grey); text-align: center; padding-bottom: .4rem; white-space: nowrap; }
+  .hang .drop { height: 9rem; border-top: 1px solid var(--ink); }
+  .hang .b { display: block; height: calc(var(--v) / var(--max) * 100%); background: var(--ink); }
+  .hang .now .b { background: var(--rubric); }
+  .hang .v { text-align: center; font-weight: 600; margin-top: .5rem; font-size: .95rem; white-space: nowrap; }
+  .hang figcaption { font-size: .9rem; font-style: italic; color: var(--grey); margin-top: 1rem; max-width: 34rem; }
+  @media (max-width: 30rem) { .hang .yr { font-size: .7rem; } .hang .v { font-size: .8rem; } }
+  @media (min-width: 72rem) { .five { display: grid; grid-template-columns: minmax(0, 1fr); } }
+
+  @media print {
+    .sig img { max-height: 3.4rem; max-width: 17rem; margin: .5rem 0 .35rem; }
+
+    /* i. The Board Chair: heading and portrait down the left, the letter beginning beside it at reading size;
+       make-pdf.mjs moves what does not fit to a continuation sheet, as for the President's letter. */
+    #chair .chair { grid-template-columns: 400px 1fr; gap: 112px; height: 100%; }
+    #chair .head { position: static; display: flex; flex-direction: column; }
+    #chair .head h2.section { font-size: 3.1rem; }
+    #chair .head .lede { font-size: 1.3rem; }
+    #chair .who { margin-top: auto; grid-template-columns: 7.5rem 1fr; gap: 1.2rem; }
+    #chair .who img { width: 7.5rem; height: 7.5rem; }
+    #chair .who figcaption { font-size: 1.05rem; }
+    #chair .who b { font-size: 1.2rem; }
+    #chair .prose { max-width: 640px; font-size: 1.25rem; line-height: 1.7; }
+    .letter-cont ul { margin: 0 0 .9em; padding-left: 1.1em; }
+    .letter-cont li { padding-left: .3em; break-inside: avoid; }
+    .letter-cont li::marker { color: var(--rubric); }
+    .letter-cont li + li { margin-top: .7em; }
+    .letter-cont .prose > :first-child { margin-top: 0; }
+
+    /* iii. Programs: five falls as standing bars */
+    #students .glance { margin-top: 1.6rem; }
+    .bars.stack { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .bars.stack .track { flex-direction: column-reverse; }
+    .bars.stack .phd { width: 100%; height: calc(var(--p) / var(--max) * 216px); }
+    .bars.stack .fill { width: 100%; height: calc((var(--v) - var(--p)) / var(--max) * 216px); }
+    .bars.stack .v { font-size: 1.6rem; }
+    .bars.stack .yr { font-size: 1.05rem; }
+    .key { font-size: .95rem; }
+    .findings li { font-size: 1.15rem; padding: .7rem 0; }
+
+    /* iii. The three stories */
+    #stories .teasers { flex: 1; grid-template-columns: repeat(3, 1fr); gap: 64px; margin-top: 1.6rem; }
+    #stories { display: flex; flex-direction: column; }
+    .teaser figure { aspect-ratio: auto; height: 300px; margin-bottom: 1.1rem; }
+    .teaser figure img { object-position: 50% 30%; }
+    .teaser h3 { font-size: 2.1rem; }
+    .teaser .meta { font-size: 1.05rem; margin: .45rem 0 1rem; }
+    .teaser blockquote { font-size: 1.3rem; line-height: 1.38; }
+    .teaser .more { font-size: 1.05rem; padding-top: .8rem; }
+
+    /* vi. Five years: the table and the hanging deficit side by side */
+    .five { flex: 1; display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: start; margin-top: 1.4rem; }
+    .five .fin { margin-top: 0; }
+    .five .scroll { overflow: visible; }
+    .five table { min-width: 0; }
+    .five .fin th, .five .fin td { font-size: 1rem; padding: .24rem 0; }
+    .five .fin tr.sub th, .five .fin tr.sub td { padding-top: 0; padding-bottom: 0; }
+    .five .fin td.amt, .five .fin thead th { padding-left: .9rem; }
+    .hang { margin: 0; }
+    .hang h3 { font-size: 1.05rem; margin-bottom: 1.2rem; }
+    .hang .drop { height: 250px; }
+    .hang .yr { font-size: .9rem; }
+    .hang .v { font-size: 1.05rem; }
+    .hang figcaption { font-size: 1rem; }
+    #five .fin-notes { margin-top: auto; font-size: .95rem; }
+
+    /* vi. Donors */
+    .bars.three { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    #donors .glance { margin-top: 1.6rem; }
+    #year .cal li { padding: .58rem 0; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the report</a>
+
+<div class="shell at-top" id="shell">
+<a class="tocbtn sc" href="#top">Contents</a>
+  <nav class="rail" aria-label="The order of this report">
+    <span class="sc">The Order of this Report</span>
+    <div class="list">
+    <ol>
+      <li><a href="#chair"><span class="n">i.</span>Letter from the Board Chair</a></li>
+      <li><a href="#letter"><span class="n">ii.</span>Letter from the President</a></li>
+      <li><a href="#students"><span class="n">iii.</span>Students and Programs</a></li>
+      <li><a href="#year"><span class="n">iv.</span>The Year in Review</a></li>
+      <li><a href="#public"><span class="n">v.</span>Learning in Public</a></li>
+      <li><a href="#finances"><span class="n">vi.</span>Finances</a></li>
+      <li><a href="#thanks"><span class="n">vii.</span>With Thanks</a></li>
+    </ol></div>
+    <a class="pdf" href="ICS-Annual-Report-2025-26.pdf">Download the PDF</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Cover -->
+    <section class="sheet cover" id="top" aria-label="Cover">
+      <div class="titleblock">
+        <div class="sc who">Institute for Christian Studies</div>
+        <h1>Annual Report</h1>
+        <div class="year">for the fiscal year <span class="r">2025–26<span class="fn" aria-hidden="true">*</span></span></div>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="order">
+        <h2 class="sc">The Order of this Report</h2>
+        <ol>
+          <li><a href="#chair"><span class="n">i.</span><span class="t">A Letter from the Board Chair</span><span class="pg"></span></a></li>
+          <li><a href="#letter"><span class="n">ii.</span><span class="t">A Letter from the President</span><span class="pg"></span></a></li>
+          <li><a href="#students"><span class="n">iii.</span><span class="t">Students and Programs</span><span class="pg"></span></a></li>
+          <li><a href="#year"><span class="n">iv.</span><span class="t">The Year in Review</span><span class="pg"></span></a></li>
+          <li><a href="#public"><span class="n">v.</span><span class="t">Learning in Public</span><span class="pg"></span></a></li>
+          <li><a href="#finances"><span class="n">vi.</span><span class="t">Finances</span><span class="pg"></span></a></li>
+          <li><a href="#thanks"><span class="n">vii.</span><span class="t">With Thanks</span><span class="pg"></span></a></li>
+        </ol>
+        <p class="fine"><span class="r fn" aria-hidden="true">*</span>Our fiscal year runs July 1 to June 30.<span class="screen-only"> <a href="ICS-Annual-Report-2025-26.pdf">Download the PDF</a>. Our students’ stories are told in full in the <a href="../26-impact/">Impact Report</a>.</span></p>
+      </div>
+      <div class="foot-rule" aria-hidden="true"></div>
+    </section>
+
+    <!-- i. Board Chair. Text: /workspace/uploads/Beerens---Board-Letter---v2---Standish-Edits.docx (Standish edits, 2026-11-24), unchanged.
+         Fact notes for Dan: general donations rose 49.8% (total donations 47.9%); 2021–22 revenues less expenditures (−$109,932) was smaller than 2025–26 (−$121,623),
+         so "smallest deficit in recent memory" holds only from 2022–23 on. Headshot: f2bf site (beerens-headshot.jpg); signature from the docx. -->
+    <section class="sheet" id="chair" data-section>
+      <div class="runhead"><span class="sc"><span class="r">i.</span> A Letter from the Board Chair</span><span>2</span></div>
+      <div class="chair">
+        <div class="head">
+          <h2 class="section"><span class="n">i.</span>A Letter from the Board Chair</h2>
+          <p class="lede">Forward progress: Dan Beerens on a year in which our gains outweighed our losses.</p>
+          <figure class="who">
+            <img src="img/beerens-headshot.jpg" alt="Dan Beerens, smiling, in a dark jacket and pale blue shirt." width="600" height="600">
+            <figcaption><b>Dan Beerens</b>Chair, Board of Trustees</figcaption>
+          </figure>
+        </div>
+        <div class="prose">
+          <p class="versal">As a football fan, I am always heartened when credit is given for the forward progress of the runner or receiver, even though they may have been tackled and dragged backward for several yards before the play is blown dead. Institutions can sometimes get tackled and dragged backward too, but I am pleased to report that this year our gains have outweighed our losses! Although I am entering my last year as board chair, <i>I feel more optimistic than ever about ICS.</i> Here are some reasons why:</p>
+          <ul>
+            <li>We made a very significant and seamless transition from Dr. Ron Kuipers to Dr. Beth Green as president of ICS. I am grateful to Ron for his sense that it was time to return to his love of scholarship and the classroom, and to hand over the reins to Beth. I am grateful to Beth for answering the call to work at a place where she feels fully mission-aligned. Kudos to both Ron and Beth for working so smoothly and humbly together for the benefit of the institution and for doing everything needed to help ICS thrive!</li>
+            <li>We are engaging with old friends and new in ever-increasing ways through our people and our programs. Old friends who wondered what had happened to us have responded with interest and financial support in appreciation of our new direction. New friends are coming to us through our Free to be Faithful courses, our Substack, and the visibility of our faculty, and they are finding out how much they enjoy our lively and welcoming community.</li>
+            <li>As a measure of our renewed engagement, our donations increased by 50% last year! This was in spite of being knocked off balance just as we had approved our budget; a large grant we had been counting on fell through, and we were left with a large funding gap to fill. Through the hard work of our advancement team, the fiscal responsibility of our staff, and the supportive response of our donors, old and new, we finished the fiscal year with the smallest deficit in recent memory!</li>
+            <li>We are reaching out to explore new ways of serving. Our outreach to pastors, particularly those in disaffiliating CRC churches, has been greatly appreciated. We will continue to form networks and create resources to support pastors and churches. We continue to enjoy collaborative relationships with a growing number of organizations with which we can find common cause.</li>
+          </ul>
+          <p>Thank you for your interest and support, and for cheering us on as an ICS community to continue to be faithful! Your encouragement helps us get up and line up again. We press on with an open heart to all, asking the hard questions without fear, pondering and wondering together what it means to follow the way of Christ.</p>
+          <p class="sig">Sincerely,<img src="img/beerens-signature.png" alt="" width="680" height="165"><b>Dan Beerens</b>Chair, Board of Trustees, Institute for Christian Studies</p>
+        </div>
+      </div>
+      <div class="folio">2</div>
+    </section>
+
+    <!-- ii. President. First draft for Beth to revise (2026-11-24), from her October 1, 2026 90-day update, kept to what can be said publicly:
+         the three questions and priorities, Waymaker, Friends of ICS, grant applications, and the opportunities she heard.
+         Left out on purpose: role descriptions, performance goals, the AOR mapping, the challenges list beyond "communication, processes, resources",
+         the 40-donor list and the donor event host. Figures are from the audited statements and ICS student records (see iii. and vi.). -->
+    <section class="sheet" id="letter" data-section>
+      <div class="runhead"><span class="sc"><span class="r">ii.</span> A Letter from the President</span><span>3</span></div>
+      <div class="letter">
+        <div class="head">
+          <figure class="portrait">
+            <img src="img/president-portrait.webp" alt="Beth Green, President of the Institute for Christian Studies, in a red cardigan, laughing warmly as she holds a book and gestures mid-conversation." width="1122" height="1402">
+          </figure>
+          <h2 class="section"><span class="n">ii.</span>A Letter from the President</h2>
+          <p class="lede">Beth Green on the year behind us, her first months as President, and the work ahead.</p>
+        </div>
+        <div class="prose">
+          <p class="ph-note draft">A first draft for Beth Green to revise.</p>
+          <p class="versal">Dear members and friends of ICS, an annual report asks two things of a president: an account of the year just ended, and an honest word about where we are going. I became President on July 1, so the first is mostly a story of other people’s faithfulness, and the second is still being written, with you.</p>
+          <p>The year reported here was led by Ron Kuipers, and I’m grateful for how steadily and hopefully he led it. It opened at the Fall Retreat and with the celebration of the life of Calvin Seerveld, and it closed at Convocation, where four graduates received their degrees and John A. Olthuis was awarded an honorary Doctor of Letters. In between, Senate approved a new Master of Worldview Studies in Education for teachers and school leaders, Free to be Faithful brought ICS scholarship to 187 course registrants, and Neal DeRoo and Edith van der Boom published new books. Ron continues to serve the ICS as Interim Academic Dean, so this is a thank-you, not a farewell.</p>
+          <p>In my first weeks I did what newcomers should: I listened, asking Senior Members, staff and trustees three questions. What are the biggest challenges facing ICS? What are our most promising opportunities for growth? How should we pursue them? The answers were candid. People named the ordinary strains of a small school doing a great deal: communication and processes that need to be clearer, and resources stretched thin. They also named real opportunities: room in our programs for more students, alumni who want to stay close, churches beyond the Christian Reformed denomination, and younger generations we have yet to reach.</p>
+          <p>From that listening came three priorities for this year, which I’ve shared with the community and the Board. The first is caring for our team, the Senior Members and staff who carry this work. The second is visibility: telling the ICS story to new and existing audiences. In September Ron Kuipers and Neal DeRoo joined about eighty pastors and leaders from churches that have left the Christian Reformed Church in North America at the Waymaker conference in Edmonton, and I travelled to Grand Rapids to meet the board of Friends of ICS and to British Columbia to meet with ICS supporters. At these events, among others, we’ve focused on connecting, strengthening old ties and forging new ones. The third is funding the future: putting advancement first and broadening where our revenue comes from. We sent seven grant applications and letters of intent in September and October alone.</p>
+          <p>Where does that leave us? In a stronger place than a year ago, and not yet where we need to be. In the fiscal year 2025–26, donations rose by nearly half and 56 new donors gave to ICS for the first time. Tuition revenue grew by 45 percent. Our deficit fell to $121,623, from $282,074 in 2024–25 and $441,670 in 2023–24. Fourteen PhD Junior Members are studying with us this fall, twice as many as in 2022. But we still spend more than we bring in, and closing that gap is the work of the next few years. Our finance pages set this out plainly.</p>
+          <p>My hope is not for a different ICS but for one more fully itself: a community where Junior Members learn to think well and faithfully, where pastors, teachers and curious adults can bring their hardest questions, and where our confidence rests on the grace of God rather than on positive thinking. Thank you for being part of it. I look forward to seeing many of you at our Annual General Meeting on December 12.</p>
+          <p class="sig"><img src="img/green-signature.png" alt="" width="1142" height="182"><b>Beth Green</b>President, Institute for Christian Studies</p>
+        </div>
+      </div>
+      <div class="folio">3</div>
+    </section>
+
+    <!-- iii. Students and Programs. Source: ampEducator snapshot 2026-11-19 (Codex/Work/Context-Info/ampEducator-Data; aggregates only, no personal data here).
+         Program students: everyone enrolled in a degree or certificate program on October 1 of each year, counted once (33, 35, 39, 44, 47).
+         By program, enrolments (one student holds two programs in 2026, so they sum to 48). PhD 7, 8, 7, 10, 14. MA-EL 10, 12, 13, 18, 12.
+         Of the 47 enrolled on 2026-10-01, 12 had taken no course since July 2025 (thesis and dissertation stages among them), so this fall is not the headline year.
+         Tuition: audited statements, 2020–21 $124,082 to 2025–26 $253,162. -->
+    <section class="sheet" id="students" data-section>
+      <div class="runhead"><span class="sc"><span class="r">iii.</span> Students and Programs</span><span>5</span></div>
+      <h2 class="section"><span class="n">iii.</span>Students and Programs</h2>
+      <p class="lede">Enrolment in our degree and certificate programs has grown every fall since 2022, and the PhD has doubled.</p>
+      <div class="glance programs">
+        <div>
+          <h3 id="prog-h">Students in our programs, each fall</h3>
+          <div class="bars stack" style="--max: 50" role="group" aria-labelledby="prog-h">
+            <div class="bar" tabindex="0" data-tip="Fall 2022: 33 students, 7 in the PhD" aria-label="Fall 2022: 33 students in degree and certificate programs, 7 of them in the PhD"><span class="yr">2022</span><span class="track"><span class="phd" style="--p:7"></span><span class="fill" style="--v:33; --p:7"></span></span><span class="v">33</span></div>
+            <div class="bar" tabindex="0" data-tip="Fall 2023: 35 students, 8 in the PhD" aria-label="Fall 2023: 35 students in degree and certificate programs, 8 of them in the PhD"><span class="yr">2023</span><span class="track"><span class="phd" style="--p:8"></span><span class="fill" style="--v:35; --p:8"></span></span><span class="v">35</span></div>
+            <div class="bar" tabindex="0" data-tip="Fall 2024: 39 students, 7 in the PhD" aria-label="Fall 2024: 39 students in degree and certificate programs, 7 of them in the PhD"><span class="yr">2024</span><span class="track"><span class="phd" style="--p:7"></span><span class="fill" style="--v:39; --p:7"></span></span><span class="v">39</span></div>
+            <div class="bar" tabindex="0" data-tip="Fall 2025: 44 students, 10 in the PhD" aria-label="Fall 2025: 44 students in degree and certificate programs, 10 of them in the PhD"><span class="yr">2025</span><span class="track"><span class="phd" style="--p:10"></span><span class="fill" style="--v:44; --p:10"></span></span><span class="v">44</span></div>
+            <div class="bar" tabindex="0" data-tip="Fall 2026: 47 students, 14 in the PhD" aria-label="Fall 2026: 47 students in degree and certificate programs, 14 of them in the PhD"><span class="yr">2026</span><span class="track"><span class="phd" style="--p:14"></span><span class="fill" style="--v:47; --p:14"></span></span><span class="v">47</span></div>
+          </div>
+          <p class="key" aria-hidden="true"><span class="sw phd"></span>PhD <span class="sw"></span>Master’s and certificate</p>
+          <p class="src">Students enrolled in a degree or certificate program on October 1, counted once each. The count includes students writing a thesis or dissertation, so it is higher than the number taking courses.</p>
+        </div>
+        <div>
+          <h3>Our programs this fall</h3>
+          <dl class="ledger">
+            <div><dt>PhD</dt><dd>14</dd></div>
+            <div><dt>MA in Education and Leadership</dt><dd>12</dd></div>
+            <div><dt>Master of Arts (MA)</dt><dd>11</dd></div>
+            <div><dt>Master of Worldview Studies in Education</dt><dd>7</dd></div>
+            <div><dt>Master of Worldview Studies</dt><dd>1</dd></div>
+            <div><dt>Certificates in Christian school leadership</dt><dd>3</dd></div>
+          </dl>
+          <p class="src">Enrolments on October 1, 2026. One student is enrolled in two programs.</p>
+        </div>
+        <div>
+          <h3>What the numbers say</h3>
+          <ul class="findings">
+            <li><b>14 PhD Junior Members</b> this fall, twice the 7 of fall 2022.</li>
+            <li><b>18 students</b> in the MA in Education and Leadership in fall 2025, its largest group in five years.</li>
+            <li><b>7 students</b> in the new Master of Worldview Studies in Education, approved by Senate in February 2026.</li>
+            <li><b>$253,162 in tuition and fees</b> in 2025–26, up 45% on the year before and double the $124,082 of 2020–21.</li>
+            <li><b>4 graduates</b> at Convocation, May 2026.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="folio">5</div>
+    </section>
+
+    <!-- iii. Three teasers for the Impact Report's profiles. Links go to ../26-impact/ (#students is David's opener; the other two ids were added for these links). -->
+    <section class="sheet" id="stories" aria-label="Students and Programs, continued: three stories" data-section-part="students">
+      <div class="runhead"><span class="sc"><span class="r">iii.</span> Students and Programs</span><span>6</span></div>
+      <p class="lede">Behind the numbers: two Junior Members and a graduate. Their stories are told in full in our Impact Report.</p>
+      <div class="teasers">
+        <article class="teaser">
+          <figure><img src="img/teaser-david-grills.jpg" alt="David Grills, in a navy short-sleeved shirt, seated in a classroom and smiling as he looks off to one side." width="800" height="1000" loading="lazy"></figure>
+          <h3>David Grills</h3>
+          <p class="meta">Junior Member, PhD · MA-EL graduate, 2022 · Bible teacher, Hamilton District Christian High</p>
+          <blockquote class="resp"><p>I think teachers should be the first learners in their classroom.</p></blockquote>
+          <a class="more" href="../26-impact/#students">Read David’s story</a>
+        </article>
+        <article class="teaser">
+          <figure><img src="img/teaser-alayna-erickson.jpg" alt="Alayna Erickson, in a pale pink blazer, seated at a table with her paper in front of her, listening during her session." width="800" height="1000" loading="lazy"></figure>
+          <h3>Alayna Erickson</h3>
+          <p class="meta">Junior Member, MA</p>
+          <blockquote class="resp"><p>Doing philosophy at ICS has shaped how I think far more than just what I ought to think.</p></blockquote>
+          <a class="more" href="../26-impact/#alayna-erickson">Read Alayna’s story</a>
+        </article>
+        <article class="teaser">
+          <figure><img src="img/teaser-caleb-ratzlaff.jpg" alt="Caleb Ratzlaff, in a cream T-shirt, leaning back in an outdoor chair and laughing as he looks off to one side." width="800" height="1000" loading="lazy"></figure>
+          <h3>Caleb Ratzlaff</h3>
+          <p class="meta">MA in Philosophy, 2016 · City Councillor, St. Catharines</p>
+          <blockquote class="resp"><p>It’s okay not to be certain, and it’s okay not to be right.</p></blockquote>
+          <a class="more" href="../26-impact/#caleb-ratzlaff">Read Caleb’s story and watch the interview</a>
+        </article>
+      </div>
+      <div class="folio">6</div>
+    </section>
+
+    <!-- iii. Courses and enrolments: the Impact Report's figures, unchanged, so the two documents agree (its "Active program students 38" is left out:
+         it is counted differently from the October 1 program figures above). Non-degree unique students by fiscal year: 68, 54, 32 (ampEducator). -->
+    <section class="sheet" id="courses" aria-label="Students and Programs, continued: courses and enrolments" data-section-part="students">
+      <div class="runhead"><span class="sc"><span class="r">iii.</span> Students and Programs</span><span>7</span></div>
+      <div class="glance">
+        <div>
+          <h3>Students taking courses</h3>
+          <div class="bars" style="--max: 80">
+            <div class="bar" tabindex="0" data-tip="2023–24: 74 unique students" aria-label="2023–24: 74 unique students"><span class="yr">2023–24</span><span class="track"><span class="fill" style="--v:74"></span></span><span class="v">74</span></div>
+            <div class="bar" tabindex="0" data-tip="2024–25: 76 unique students" aria-label="2024–25: 76 unique students"><span class="yr">2024–25</span><span class="track"><span class="fill" style="--v:76"></span></span><span class="v">76</span></div>
+            <div class="bar now" tabindex="0" data-tip="2025–26: 58 unique students, July 2025 to June 2026" aria-label="2025–26: 58 unique students, July 2025 to June 2026"><span class="yr">2025–26</span><span class="track"><span class="fill" style="--v:58"></span></span><span class="v">58</span></div>
+            <div class="bar proj" tabindex="0" data-tip="2026–27: 40 so far; about 74 projected (65–80)" aria-label="2026–27: 40 unique students registered by November 19, 2026; about 74 projected for the year, with a range of 65 to 80" style="--at:40; --v:74"><span class="yr">2026–27</span><span class="track"><span class="fill"></span><span class="ahead"></span><span class="mark" aria-hidden="true"><span class="past">40 so far</span><span class="next">projected</span></span></span><span class="v">74</span></div>
+          </div>
+          <p class="src">Each student counted once a year. 2025–26 and 2026–27 count the fiscal year, July to June; for 2026–27, 40 students had registered by November 19, 2026, and the rest of the year is projected from the past three years.</p>
+        </div>
+        <div>
+          <h3>By program, 2025–26</h3>
+          <dl class="ledger">
+            <div><dt>Master of Arts (MA)</dt><dd>8</dd></div>
+            <div><dt>PhD</dt><dd>11</dd></div>
+            <div><dt>MA in Education and Leadership</dt><dd>18</dd></div>
+            <div><dt>Master of Worldview Studies</dt><dd>1</dd></div>
+            <div><dt>Non-degree and audit</dt><dd>22</dd></div>
+          </dl>
+          <p class="src">Students who took at least one course in 2025–26.</p>
+        </div>
+        <div>
+          <h3>The year in numbers</h3>
+          <dl class="ledger">
+            <div><dt>Courses offered</dt><dd>21</dd></div>
+            <div><dt>Course enrolments</dt><dd>92</dd></div>
+            <div><dt>Students taking courses</dt><dd>58</dd></div>
+            <div><dt>Graduates, Convocation 2026</dt><dd>4</dd></div>
+          </dl>
+          <p class="src">Almost all of the change in students taking courses since 2023–24 is among non-degree and audit students. The number of degree students taking courses has held steady.</p>
+        </div>
+      </div>
+      <div class="folio">7</div>
+    </section>
+
+    <!-- iv. Year in review: the Impact Report's calendar, with the governance and program milestones members expect (AGM, Senate, the presidential search). -->
+    <section class="sheet" id="year" data-section>
+      <div class="runhead"><span class="sc"><span class="r">iv.</span> The Year in Review</span><span>8</span></div>
+      <h2 class="section"><span class="n">iv.</span>The Year in Review</h2>
+      <div class="yir">
+        <ol class="cal">
+          <li><span class="m">Jul 2025</span><span><b>Summer Big Read</b> draws 1,277 registrants.</span></li>
+          <li><span class="m">Sep 2025</span><span><b>Fall Big Read</b> draws more than 700 registrants.</span></li>
+          <li><span class="m">Fall 2025</span><span><b>Free to be Faithful</b> opens its first fall courses.</span></li>
+          <li><span class="m">Oct 2025</span><span><b>Reenchanting the World</b> conference, co-hosted with Toronto Metropolitan University and Christian Courier, welcomes about 160 attendees.</span></li>
+          <li><span class="m">Dec 2025</span><span>The <b>Annual General Meeting</b> elects Jeremy Fisher and Laura Swan to the Board of Trustees.</span></li>
+          <li><span class="m">Jan 2026</span><span>Edith van der Boom publishes <a href="https://wipfandstock.com/products/cultivating-learning-communities-of-belonging-9798385250097"><i>Cultivating Learning Communities of Belonging</i></a> (Cascade Books).</span></li>
+          <li><span class="m">Jan 2026</span><span><b>Free to be Faithful</b> opens its first winter courses.</span></li>
+          <li><span class="m">Jan 2026</span><span>Neal DeRoo publishes <a href="https://www.bloomsbury.com/ca/material-spirituality-9781350418035/"><i>Material Spirituality</i></a> (Bloomsbury).</span></li>
+          <li><span class="m">Feb 2026</span><span><b>Senate approves</b> the Master of Worldview Studies in Education, and ICS announces Beth Green as its next President.</span></li>
+          <li><span class="m">May 2026</span><span><b>Courageous Faith in a Time of Fear</b>, with Knox College’s Ministry Forum, draws 202 registrants.</span></li>
+          <li><span class="m">May 2026</span><span><b>Convocation</b> celebrates four graduates: Heidi Blokland and Kevin Otter (MA-EL), Julia Cherian (MWS), and Stacy Kok (MWS-E). John A. Olthuis receives an honorary Doctor of Letters.</span></li>
+          <li><span class="m">Jul 2026</span><span><b>Beth Green becomes President</b> of ICS.</span></li>
+        </ol>
+        <figure>
+          <img src="img/courageous-faith-participants.jpg" alt="Seen from the balcony, conference participants wearing name badges fill the wooden pews of a stone-walled chapel, chatting, laughing, and embracing." width="1400" height="2100" loading="lazy">
+          <figcaption>Participants at Courageous Faith in a Time of Fear, Knox College, May 2026.</figcaption>
+        </figure>
+      </div>
+      <div class="folio">8</div>
+    </section>
+
+    <!-- v. Learning in public: as in the Impact Report. -->
+    <section class="sheet" id="public" data-section>
+      <div class="runhead"><span class="sc"><span class="r">v.</span> Learning in Public</span><span>9</span></div>
+      <h2 class="section"><span class="n">v.</span>Learning in Public</h2>
+      <p class="lede">The questions we study belong to the whole church. This year our lifelong learning programs took them well beyond St. George Street.</p>
+      <div class="reach">
+        <ol class="rlist">
+          <li><div class="row"><span class="k">Free to be Faithful course registrants</span><span class="v">187</span></div><p>Short courses for pastors, teachers, and curious adults.</p></li>
+          <li><div class="row"><span class="k">Fall Big Read registrants</span><span class="v">700+</span></div><p>The Summer Big Read drew 1,277 registrants.</p></li>
+          <li><div class="row"><span class="k">Total conference attendees</span><span class="v">360+</span></div><p><i>Reenchanting the World</i> and <i>Courageous Faith in a Time of Fear</i>.</p></li>
+          <li><div class="row"><span class="k">Substack subscribers</span><span class="v">1,400+</span></div><p>Essays on faith, scholarship, and public life.</p></li>
+        </ol>
+      </div>
+      <div class="folio">9</div>
+    </section>
+
+    <!-- vi. Finances: the Impact Report's summary sheet. 2025–26 figures from Harley Dekker (Select-Fin-Details-June-30-2026-for-Annual-Report.xlsx). -->
+    <section class="sheet" id="finances" data-section>
+      <div class="runhead"><span class="sc"><span class="r">vi.</span> Finances</span><span>10</span></div>
+      <h2 class="section"><span class="n">vi.</span>Finances</h2>
+      <div class="fin">
+        <div>
+          <h3 id="rev-h">Where our support came from</h3>
+          <table aria-labelledby="rev-h">
+            <tbody>
+              <tr class="head"><th scope="rowgroup" colspan="3">Donation income</th></tr>
+              <tr class="sub"><th scope="row">General donations</th><td class="amt">$577,514</td><td class="share"></td></tr>
+              <tr class="sub"><th scope="row">Church contributions</th><td class="amt">36,794</td><td class="share"></td></tr>
+              <tr class="sub"><th scope="row">Bequests</th><td class="amt">131,010</td><td class="share"></td></tr>
+              <tr class="subtotal"><th scope="row">Total donations</th><td class="amt">$745,318</td><td class="share"><span class="sbar" style="--p:59" title="59% of revenue"></span></td></tr>
+              <tr><th scope="row">Tuition and fees</th><td class="amt">253,162</td><td class="share"><span class="sbar" style="--p:20" title="20% of revenue"></span></td></tr>
+              <tr><th scope="row">Investment income</th><td class="amt">114,329</td><td class="share"><span class="sbar" style="--p:9" title="9% of revenue"></span></td></tr>
+              <tr><th scope="row">Okia Fund and other fund transfers</th><td class="amt">56,476</td><td class="share"><span class="sbar" style="--p:4" title="4% of revenue"></span></td></tr>
+              <tr><th scope="row">Other income</th><td class="amt">86,107</td><td class="share"><span class="sbar" style="--p:7" title="7% of revenue"></span></td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total revenues</th><td class="amt">$1,255,392</td><td></td></tr></tfoot>
+          </table>
+        </div>
+        <div>
+          <h3 id="exp-h">How it was used</h3>
+          <table aria-labelledby="exp-h">
+            <tbody>
+              <tr><th scope="row">Salaries, benefits, and allowances</th><td class="amt">$997,880</td><td class="share"><span class="sbar" style="--p:72" title="72% of expenditures"></span></td></tr>
+              <tr><th scope="row">Academic and research</th><td class="amt">138,437</td><td class="share"><span class="sbar" style="--p:10" title="10% of expenditures"></span></td></tr>
+              <tr><th scope="row">Rent</th><td class="amt">51,200</td><td class="share"><span class="sbar" style="--p:4" title="4% of expenditures"></span></td></tr>
+              <tr><th scope="row">Office supplies and overhead</th><td class="amt">60,226</td><td class="share"><span class="sbar" style="--p:4" title="4% of expenditures"></span></td></tr>
+              <tr><th scope="row">Consulting and professional fees</th><td class="amt">98,780</td><td class="share"><span class="sbar" style="--p:7" title="7% of expenditures"></span></td></tr>
+              <tr><th scope="row">Advertising and promotion</th><td class="amt">12,443</td><td class="share"><span class="sbar" style="--p:1" title="1% of expenditures"></span></td></tr>
+              <tr><th scope="row">Conferences and events</th><td class="amt">18,049</td><td class="share"><span class="sbar" style="--p:1" title="1% of expenditures"></span></td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total expenditures</th><td class="amt">$1,377,015</td><td></td></tr></tfoot>
+          </table>
+          <p class="net"><span>Revenues less expenditures</span><span>−$121,623</span></p>
+        </div>
+      </div>
+      <div class="fin-foot">
+        <figure class="trend">
+          <h3 id="trend-h">General donations, 2022–23 to 2025–26</h3>
+          <div class="plot" style="--max: 600000" role="group" aria-labelledby="trend-h">
+            <span class="base" aria-hidden="true"></span>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polyline points="0,50.59 33.33,51.91 66.67,35.73 100,3.75"/></svg>
+            <span class="pt start below" tabindex="0" style="--i:0; --v:296471" data-tip="2022–23: $296,471" aria-label="2022–23: $296,471 in general donations"><span class="v" aria-hidden="true">$296K</span></span>
+            <span class="pt below" tabindex="0" style="--i:1; --v:288523" data-tip="2023–24: $288,523" aria-label="2023–24: $288,523 in general donations"><span class="v" aria-hidden="true">$289K</span></span>
+            <span class="pt" tabindex="0" style="--i:2; --v:385626" data-tip="2024–25: $385,626" aria-label="2024–25: $385,626 in general donations"><span class="v" aria-hidden="true">$386K</span></span>
+            <span class="pt now" tabindex="0" style="--i:3; --v:577514" data-tip="2025–26: $577,514" aria-label="2025–26: $577,514 in general donations"><span class="v" aria-hidden="true">$578K</span></span>
+            <span class="yr start" style="--i:0" aria-hidden="true">2022–23</span>
+            <span class="yr" style="--i:1" aria-hidden="true">2023–24</span>
+            <span class="yr" style="--i:2" aria-hidden="true">2024–25</span>
+            <span class="yr end" style="--i:3" aria-hidden="true">2025–26</span>
+          </div>
+        </figure>
+        <div class="fin-notes">
+          <p>Summary of the audited financial statements for the year ended June 30, 2026. Bars show each line’s share of its total.</p>
+          <p>The pages that follow compare five years, describe our donors, and give the full revenue, expenditure, and balance sheet figures.</p>
+        </div>
+      </div>
+      <div class="folio">10</div>
+    </section>
+
+    <!-- vi. Five years. Revenue lines as published in each year's annual report (2021–22: ICSAnnualReport2022Web; 2022–23: AnnualReport2023;
+         2023–24: 2023-24 Annual Report WV; 2024–25: ICS Annual Report 24-25; 2025–26: Harley Dekker). Every column's lines add to its total.
+         Expenditure lines changed from functional (Academic, Administration…) to natural (Salaries, Rent…) in 2022–23, so only totals are compared. -->
+    <section class="sheet" id="five" aria-label="Finances, continued: five years" data-section-part="finances">
+      <div class="runhead"><span class="sc"><span class="r">vi.</span> Finances</span><span>11</span></div>
+      <p class="lede">Five years at a glance: revenue is at its highest in five years, and the deficit has narrowed two years running.</p>
+      <div class="five">
+        <div class="fin">
+          <div>
+          <h3 id="five-h">Revenues and expenditures, 2021–22 to 2025–26</h3>
+          <div class="scroll" tabindex="0" role="region" aria-labelledby="five-h">
+          <table aria-labelledby="five-h">
+            <thead><tr><th scope="col">Year ended June 30</th><th scope="col">2022</th><th scope="col">2023</th><th scope="col">2024</th><th scope="col">2025</th><th scope="col" class="cur">2026</th></tr></thead>
+            <tbody>
+              <tr class="head"><th scope="rowgroup" colspan="6">Donation income</th></tr>
+              <tr class="sub"><th scope="row">General donations</th><td class="amt prev">$386,471</td><td class="amt prev">$296,471</td><td class="amt prev">$288,523</td><td class="amt prev">$385,626</td><td class="amt">$577,514</td></tr>
+              <tr class="sub"><th scope="row">Church contributions</th><td class="amt prev">95,708</td><td class="amt prev">80,347</td><td class="amt prev">80,238</td><td class="amt prev">61,496</td><td class="amt">36,794</td></tr>
+              <tr class="sub"><th scope="row">Bequests</th><td class="amt prev">337,455</td><td class="amt prev">224,895</td><td class="amt prev">71,607</td><td class="amt prev">56,710</td><td class="amt">131,010</td></tr>
+              <tr class="subtotal"><th scope="row">Total donations</th><td class="amt prev">$819,634</td><td class="amt prev">$601,713</td><td class="amt prev">$440,368</td><td class="amt prev">$503,832</td><td class="amt">$745,318</td></tr>
+              <tr><th scope="row">Tuition and fees</th><td class="amt prev">155,829</td><td class="amt prev">161,604</td><td class="amt prev">182,576</td><td class="amt prev">175,015</td><td class="amt">253,162</td></tr>
+              <tr><th scope="row">Investment income</th><td class="amt prev">(61,967)</td><td class="amt prev">134,975</td><td class="amt prev">109,623</td><td class="amt prev">120,373</td><td class="amt">114,329</td></tr>
+              <tr><th scope="row">Okia Fund and other transfers</th><td class="amt prev">27,776</td><td class="amt prev">41,082</td><td class="amt prev">49,262</td><td class="amt prev">201,688</td><td class="amt">56,476</td></tr>
+              <tr><th scope="row">Other income</th><td class="amt prev">878</td><td class="amt prev">2,972</td><td class="amt prev">57,167</td><td class="amt prev">8,985</td><td class="amt">86,107</td></tr>
+              <tr class="total"><th scope="row">Total revenues</th><td class="amt prev">$942,150</td><td class="amt prev">$942,346</td><td class="amt prev">$838,996</td><td class="amt prev">$1,009,893</td><td class="amt">$1,255,392</td></tr>
+              <tr><th scope="row">Total expenditures</th><td class="amt prev">1,052,082</td><td class="amt prev">1,088,004</td><td class="amt prev">1,280,666</td><td class="amt prev">1,291,967</td><td class="amt">1,377,015</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Revenues less expenditures</th><td class="amt prev">($109,932)</td><td class="amt prev">($145,658)</td><td class="amt prev">($441,670)</td><td class="amt prev">($282,074)</td><td class="amt">($121,623)</td></tr></tfoot>
+          </table>
+          </div>
+          </div>
+        </div>
+        <figure class="hang">
+          <h3 id="hang-h">Revenues less expenditures</h3>
+          <div class="cols" role="group" aria-labelledby="hang-h" style="--max: 450000">
+            <div class="col" tabindex="0" aria-label="2021–22: deficit of $109,932"><span class="yr">2021–22</span><span class="drop"><span class="b" style="--v:109932"></span></span><span class="v">−$110K</span></div>
+            <div class="col" tabindex="0" aria-label="2022–23: deficit of $145,658"><span class="yr">2022–23</span><span class="drop"><span class="b" style="--v:145658"></span></span><span class="v">−$146K</span></div>
+            <div class="col" tabindex="0" aria-label="2023–24: deficit of $441,670"><span class="yr">2023–24</span><span class="drop"><span class="b" style="--v:441670"></span></span><span class="v">−$442K</span></div>
+            <div class="col" tabindex="0" aria-label="2024–25: deficit of $282,074"><span class="yr">2024–25</span><span class="drop"><span class="b" style="--v:282074"></span></span><span class="v">−$282K</span></div>
+            <div class="col now" tabindex="0" aria-label="2025–26: deficit of $121,623"><span class="yr">2025–26</span><span class="drop"><span class="b" style="--v:121623"></span></span><span class="v">−$122K</span></div>
+          </div>
+          <figcaption>The gap between what we spend and what we receive has closed by $320,047 in two years, to its smallest since 2021–22.</figcaption>
+        </figure>
+      </div>
+      <div class="fin-notes">
+        <p>From the audited financial statements as published in each year’s annual report. Brackets show a loss or deficit. Expenditure categories changed in 2022–23, so only total expenditures are compared here; the full 2025–26 lines follow.</p>
+      </div>
+      <div class="folio">11</div>
+    </section>
+
+    <!-- vi. Donors. Counts from DonorPerfect via the ICS giving report (Codex/Work/Advancement/Data/AdvancementAnalysis, data/facts.json and annual_summary.csv,
+         built 2026-10-30; aggregates only). Dollar figures in this report are the audited ones, not DonorPerfect's.
+         New donors: 2007–08 had 74, 2008–09 had 53, so 56 is the most since 2007–08. Donors at $10,000+: 12 in 2009–10, so 10 is the most since then.
+         Retention: share of the previous year's donors who gave again (73.2%); sector benchmark 43.3% (Fundraising Effectiveness Project, as cited in the giving report).
+         US share: 19.7% of 2025–26 dollars. Recurring donors: 80. -->
+    <section class="sheet" id="donors" aria-label="Finances, continued: our donors" data-section-part="finances">
+      <div class="runhead"><span class="sc"><span class="r">vi.</span> Finances</span><span>12</span></div>
+      <p class="lede">Our donors: 56 people, churches, and organizations gave to ICS for the first time, the most in any year since 2007–08.</p>
+      <div class="glance donors">
+        <div>
+          <h3>New donors</h3>
+          <div class="bars three" style="--max: 60">
+            <div class="bar" tabindex="0" data-tip="2023–24: 30 new donors" aria-label="2023–24: 30 new donors"><span class="yr">2023–24</span><span class="track"><span class="fill" style="--v:30"></span></span><span class="v">30</span></div>
+            <div class="bar" tabindex="0" data-tip="2024–25: 47 new donors" aria-label="2024–25: 47 new donors"><span class="yr">2024–25</span><span class="track"><span class="fill" style="--v:47"></span></span><span class="v">47</span></div>
+            <div class="bar now" tabindex="0" data-tip="2025–26: 56 new donors" aria-label="2025–26: 56 new donors"><span class="yr">2025–26</span><span class="track"><span class="fill" style="--v:56"></span></span><span class="v">56</span></div>
+          </div>
+          <p class="src">People, churches, and organizations giving to ICS for the first time.</p>
+        </div>
+        <div>
+          <h3>Donors giving $10,000 or more</h3>
+          <div class="bars three" style="--max: 12">
+            <div class="bar" tabindex="0" data-tip="2023–24: 4 donors" aria-label="2023–24: 4 donors gave $10,000 or more"><span class="yr">2023–24</span><span class="track"><span class="fill" style="--v:4"></span></span><span class="v">4</span></div>
+            <div class="bar" tabindex="0" data-tip="2024–25: 8 donors" aria-label="2024–25: 8 donors gave $10,000 or more"><span class="yr">2024–25</span><span class="track"><span class="fill" style="--v:8"></span></span><span class="v">8</span></div>
+            <div class="bar now" tabindex="0" data-tip="2025–26: 10 donors" aria-label="2025–26: 10 donors gave $10,000 or more"><span class="yr">2025–26</span><span class="track"><span class="fill" style="--v:10"></span></span><span class="v">10</span></div>
+          </div>
+          <p class="src">The most since 2009–10.</p>
+        </div>
+        <div>
+          <h3>Our donors in 2025–26</h3>
+          <dl class="ledger">
+            <div><dt>Donors</dt><dd>463</dd></div>
+            <div><dt>Last year’s donors who gave again</dt><dd>73%</dd></div>
+            <div><dt>Giving monthly or on a schedule</dt><dd>80</dd></div>
+            <div><dt>Share of giving from the US</dt><dd>20%</dd></div>
+          </dl>
+          <p class="src">Donors grew from 438 in 2023–24 and 455 in 2024–25. Across North American charities, about 43% of donors give again the following year (Fundraising Effectiveness Project).</p>
+        </div>
+      </div>
+      <div class="folio">12</div>
+    </section>
+
+    <!-- vi. Finances, detail. Same categories as the 2024–25 report; 2025–26 figures from Harley Dekker. -->
+    <section class="sheet" id="fin-detail" aria-label="Finances, continued: revenues and expenditures" data-section-part="finances">
+      <div class="runhead"><span class="sc"><span class="r">vi.</span> Finances</span><span>13</span></div>
+      <div class="fin">
+        <div>
+          <h3 id="rev2-h">Revenues</h3>
+          <table aria-labelledby="rev2-h">
+            <thead><tr><th scope="col">Line</th><th scope="col">2025–26</th><th scope="col">2024–25</th><th scope="col" class="share">Share</th></tr></thead>
+            <tbody>
+              <tr class="head"><th scope="rowgroup" colspan="4">Donation income</th></tr>
+              <tr class="sub"><th scope="row">General donations</th><td class="amt">$577,514</td><td class="amt prev">$385,626</td><td class="share"></td></tr>
+              <tr class="sub"><th scope="row">Church contributions</th><td class="amt">36,794</td><td class="amt prev">61,496</td><td class="share"></td></tr>
+              <tr class="sub"><th scope="row">Bequests</th><td class="amt">131,010</td><td class="amt prev">56,710</td><td class="share"></td></tr>
+              <tr class="subtotal"><th scope="row">Total donations</th><td class="amt">$745,318</td><td class="amt prev">$503,832</td><td class="share"><span class="sbar" style="--p:59" title="59% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Tuition and fees</th><td class="amt">253,162</td><td class="amt prev">175,015</td><td class="share"><span class="sbar" style="--p:20" title="20% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Investment income</th><td class="amt">114,329</td><td class="amt prev">120,373</td><td class="share"><span class="sbar" style="--p:9" title="9% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Okia Fund and other fund transfers</th><td class="amt">56,476</td><td class="amt prev">201,688</td><td class="share"><span class="sbar" style="--p:4" title="4% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Other income</th><td class="amt">86,107</td><td class="amt prev">8,985</td><td class="share"><span class="sbar" style="--p:7" title="7% of the 2025–26 total"></span></td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total revenues</th><td class="amt">$1,255,392</td><td class="amt prev">$1,009,893</td><td></td></tr></tfoot>
+          </table>
+        </div>
+        <div>
+          <h3 id="exp2-h">Expenditures</h3>
+          <table aria-labelledby="exp2-h">
+            <thead><tr><th scope="col">Line</th><th scope="col">2025–26</th><th scope="col">2024–25</th><th scope="col" class="share">Share</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Salaries, benefits, and allowances</th><td class="amt">$997,880</td><td class="amt prev">$1,060,169</td><td class="share"><span class="sbar" style="--p:72" title="72% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Academic and research</th><td class="amt">138,437</td><td class="amt prev">82,400</td><td class="share"><span class="sbar" style="--p:10" title="10% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Rent</th><td class="amt">51,200</td><td class="amt prev">49,528</td><td class="share"><span class="sbar" style="--p:4" title="4% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Office supplies and overhead</th><td class="amt">60,226</td><td class="amt prev">52,664</td><td class="share"><span class="sbar" style="--p:4" title="4% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Consulting and professional fees</th><td class="amt">98,780</td><td class="amt prev">23,788</td><td class="share"><span class="sbar" style="--p:7" title="7% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Advertising and promotion</th><td class="amt">12,443</td><td class="amt prev">14,457</td><td class="share"><span class="sbar" style="--p:1" title="1% of the 2025–26 total"></span></td></tr>
+              <tr><th scope="row">Conferences and events</th><td class="amt">18,049</td><td class="amt prev">8,961</td><td class="share"><span class="sbar" style="--p:1" title="1% of the 2025–26 total"></span></td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total expenditures</th><td class="amt">$1,377,015</td><td class="amt prev">$1,291,967</td><td></td></tr></tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="folio">13</div>
+    </section>
+
+    <!-- vi. Finances, continued: statement of financial position -->
+    <section class="sheet" id="position" aria-label="Finances, continued: statement of financial position" data-section-part="finances">
+      <div class="runhead"><span class="sc"><span class="r">vi.</span> Finances</span><span>14</span></div>
+      <div class="fin">
+        <div>
+          <h3 id="pos-h">Statement of financial position</h3>
+          <table aria-labelledby="pos-h">
+            <thead><tr><th scope="col">As at June 30</th><th scope="col">2026</th><th scope="col">2025</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Assets</th><td class="amt">$1,500,688</td><td class="amt prev">$1,686,657</td></tr>
+              <tr><th scope="row">Liabilities</th><td class="amt">74,527</td><td class="amt prev">133,323</td></tr>
+              <tr><th scope="row">Fund balances</th><td class="amt">1,426,161</td><td class="amt prev">1,553,334</td></tr>
+              <tr class="total"><th scope="row">Total liabilities and fund balances</th><td class="amt">$1,500,688</td><td class="amt prev">$1,686,657</td></tr>
+              <tr class="group"><th scope="rowgroup" colspan="3">Fund balances represented by</th></tr>
+              <tr><th scope="row">General Fund</th><td class="amt">$972,028</td><td class="amt prev">$1,093,651</td></tr>
+              <tr><th scope="row">Restricted Fund</th><td class="amt">422,506</td><td class="amt prev">422,940</td></tr>
+              <tr><th scope="row">Fixed Asset Fund</th><td class="amt">31,627</td><td class="amt prev">36,743</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total fund balances</th><td class="amt">$1,426,161</td><td class="amt prev">$1,553,334</td></tr></tfoot>
+          </table>
+        </div>
+        <div class="fin-notes">
+          <p>Summary of the audited financial statements of the Institute for Christian Studies for the fiscal year ended June 30, 2026. Figures for 2025 are the prior-year comparatives.</p>
+          <p>Revenue and expenditure totals are the sums of the lines shown. Bars show each line’s share of its total.</p>
+          <p>The revenue line reported last year as “Okia Fund and Reinders Bursary” is now “Okia Fund and other fund transfers”; the 2025 comparative is unchanged.</p>
+          <p>The complete audited statements are available on request from the ICS finance office.</p>
+        </div>
+      </div>
+      <div class="folio">14</div>
+    </section>
+
+    <!-- vii. Thanks -->
+    <section class="sheet" id="thanks" data-section>
+      <div class="runhead"><span class="sc"><span class="r">vii.</span> With Thanks</span><span>15</span></div>
+      <h2 class="section"><span class="n">vii.</span>With Thanks</h2>
+      <div class="thanks">
+        <div class="prose">
+          <p class="versal" style="margin-top:.9em">Everything in this report was made possible by people who chose to stand with ICS. To our donors, our partner churches and foundations, our volunteers, our Board of Trustees, and our Senior Members and staff: thank you.</p>
+          <p>Your gifts funded bursaries that let students say yes. Your prayers and encouragement sustained us through a year of change. Your presence at lectures, in reading groups, and in our inboxes reminded us why this work matters.</p>
+        </div>
+        <div>
+          <div class="events">
+            <h3>Coming up</h3>
+            <ol>
+              <li><span class="d">Dec 2026</span><span><b>Annual General Meeting</b><em>December 12, online</em></span></li>
+              <li><span class="d">Jan 2027</span><span><b>Free to be Faithful</b><em>Winter courses, online</em></span></li>
+              <li><span class="d">May 2027</span><span><b>Free to be Faithful Conference</b><em>Knox College, Toronto</em></span></li>
+              <li><span class="d">May 2027</span><span><b>Convocation</b><em>Knox College, Toronto</em></span></li>
+            </ol>
+          </div>
+          <div class="contact">
+            <h3>Stay in touch</h3>
+            <p>Institute for Christian Studies<br>59 St. George Street, Toronto, Ontario<br><a href="https://www.icscanada.edu">icscanada.edu</a> · <a href="tel:+14169792331">1-416-979-2331</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="folio">15</div>
+    </section>
+
+    <!-- Back -->
+    <section class="sheet back" aria-label="Back cover">
+      <div class="who">
+        <img class="mark" src="img/ics-logo-white.svg" alt="" width="162" height="100">
+        <address>
+          <span class="sc">Institute for Christian Studies</span>
+          59 St. George Street, Toronto, Ontario<br>
+          <a href="https://www.icscanada.edu">icscanada.edu</a>
+        </address>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="legal">
+        <p>Charitable registration 10750 8434 RR0001<br>
+        US donors may give through Friends of ICS, <span class="nb">a 501(c)(3) (EIN 23-7037529)</span></p>      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.rail li a'));
+    var shell = document.getElementById('shell');
+    if (!('IntersectionObserver' in window)) { shell.classList.remove('at-top'); return; }
+    new IntersectionObserver(function (e) { shell.classList.toggle('at-top', e[0].isIntersecting); }, { threshold: .35 }).observe(document.getElementById('top'));
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    function activate(id) {
+      var a = byId[id];
+      if (!a) return;
+      links.forEach(function (l) { l.removeAttribute('aria-current'); });
+      a.setAttribute('aria-current', 'true');
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) activate(e.target.getAttribute('data-section-part') || e.target.id); });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('[data-section], [data-section-part]').forEach(function (s) { io.observe(s); });
+    activate('chair');
+  })();
+  (function () {
+    var back = document.querySelector('.back');
+    if (!back || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    back.classList.add('pre');
+    new IntersectionObserver(function (e, o) {
+      if (!e[0].isIntersecting) return;
+      back.classList.remove('pre');
+      o.disconnect();
+    }, { threshold: .2 }).observe(back);
+  })();
+</script>
+</body>
+</html>
