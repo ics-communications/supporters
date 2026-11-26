@@ -47,6 +47,42 @@
         ],
         "createdAt": "2026-11-12T22:05:49.299Z",
         "reason": "Carried over from ics-site: rendered check at 1440 and 390px found no text within 70px of any .sheet bottom; the flush child is the full-bleed photo. Assistant-verified."
+      },
+      {
+        "rule": "italic-serif-display",
+        "value": "*",
+        "files": [
+          "26-agm/ballot/index.html"
+        ],
+        "createdAt": "2026-11-26T20:38:56.747Z",
+        "reason": "Claude: roman Libre Baskerville headline with one copper italic phrase, ics-site's hero__title em pattern"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "26-agm/ballot/index.html"
+        ],
+        "createdAt": "2026-11-26T20:38:56.754Z",
+        "reason": "Claude: .bv__seg is a bordered segmented bar; each label span carries its own padding and 44px min height"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "26-agm/ballot/index.html"
+        ],
+        "createdAt": "2026-11-26T20:38:56.760Z",
+        "reason": "Claude: 1.2-1.25 only on short Baskerville display headings, matching ics-site's 1.12-1.25 heading leading; body is 1.65-1.75"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "26-agm/ballot/index.html"
+        ],
+        "createdAt": "2026-11-26T20:39:01.392Z",
+        "reason": "Claude: all 5 flagged pairs are hero text (#E9B48F, #E8C2C2) on --wine-deep #7A0A1C, which the static check reads as body cream; on wine they clear 4.5:1"
       }
     ]
   }

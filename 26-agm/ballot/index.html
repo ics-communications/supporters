@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 AGM Ballot · Institute for Christian Studies</title>
+<meta name="description" content="Cast your ballot for the 2026 Annual General Meeting of the Institute for Christian Studies. Voting closes Saturday, December 12 at 4:00 pm ET.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#7A0A1C">
+<link rel="preload" href="fonts/Outfit-300-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/LibreBaskerville-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="ballot.css">
+</head>
+<body>
+
+<a class="skip" href="#ballot">Skip to your ballot</a>
+
+<header class="hero">
+  <div class="container hero__in">
+    <div class="hero__main">
+      <a class="hero__logo" href="https://www.icscanada.edu/"><img src="img/ics-logo-white.svg" alt="Institute for Christian Studies" width="104" height="64"></a>
+      <h1 class="hero__title">Ballot for the <em>2026 AGM</em></h1>
+      <p class="hero__sub">The Institute for Christian Studies meets on Zoom on Saturday, December&nbsp;12, 2:00 to 4:00&nbsp;pm&nbsp;ET. Please vote even if you plan to attend. Each member casts one ballot.</p>
+    </div>
+    <dl class="hero__facts">
+      <div>
+        <dt>Voting closes</dt>
+        <dd><time datetime="2026-12-12T16:00-05:00">Sat, Dec 12, 4:00 pm ET</time> <span class="hero__left" data-left></span></dd>
+      </div>
+      <div>
+        <dt>Read first</dt>
+        <dd><a href="https://supporters.icscanada.edu/26-agm/ICS-AGM-2026-Package.pdf">Members’ package <span class="quiet">(PDF)</span></a> · <a href="https://supporters.icscanada.edu/26-annual/">Annual Report 2025–26</a></dd>
+      </div>
+    </dl>
+  </div>
+</header>
+
+<p class="testmode" data-testmode hidden>Test mode: ballots are checked but not recorded. Remove <code>?test</code> from the address to vote.</p>
+
+<main class="container page">
+
+  <!-- ============================================== the ballot -->
+  <section class="bal" id="ballot" aria-labelledby="bal-title">
+    <noscript>
+      <div class="bal__noscript">
+        <h2>Your ballot</h2>
+        <p>This ballot needs JavaScript. You can vote on the <a href="https://forms.gle/4aiR7DFHBDutPobf7">Google Form version of the ballot</a> instead.</p>
+      </div>
+    </noscript>
+
+    <form class="af" id="ballot-form" novalidate hidden>
+
+      <!-- Step 1: mark the items -->
+      <section class="bal__view" data-view="mark" aria-labelledby="bal-title">
+        <div class="bal__head">
+          <h2 id="bal-title" tabindex="-1">Your ballot</h2>
+          <p class="bal__count" aria-live="polite" aria-atomic="true"><span data-count>0</span> of 6 marked</p>
+        </div>
+        <p class="bal__note">Choose a title to read its notes. Blanks are allowed.</p>
+
+        <div class="bal__group" role="group" aria-labelledby="g-fin">
+          <h3 class="bal__group-title" id="g-fin">Finances</h3>
+
+          <fieldset class="bv bv--2" id="vote-auditor" data-key="auditor">
+            <legend><span class="bv__num">1</span> <a href="#item-auditor">Auditor for 2026–27</a></legend>
+            <div class="bv__seg">
+              <label><input type="radio" name="auditor" value="approve"><span>Approve</span></label>
+              <label><input type="radio" name="auditor" value="reject"><span>Do not approve</span></label>
+            </div>
+            <button type="button" class="bv__clear" hidden>Clear<span class="vh"> item 1</span></button>
+          </fieldset>
+
+          <fieldset class="bv bv--2" id="vote-statements" data-key="statements">
+            <legend><span class="bv__num">2</span> <a href="#item-statements">Audited statements, <span class="nw">2025–26</span></a></legend>
+            <div class="bv__seg">
+              <label><input type="radio" name="statements" value="approve"><span>Approve</span></label>
+              <label><input type="radio" name="statements" value="reject"><span>Do not approve</span></label>
+            </div>
+            <button type="button" class="bv__clear" hidden>Clear<span class="vh"> item 2</span></button>
+          </fieldset>
+
+          <fieldset class="bv bv--2" id="vote-budget" data-key="budget">
+            <legend><span class="bv__num">3</span> <a href="#item-budget">Budget, 2026–27</a></legend>
+            <div class="bv__seg">
+              <label><input type="radio" name="budget" value="approve"><span>Approve</span></label>
+              <label><input type="radio" name="budget" value="reject"><span>Do not approve</span></label>
+            </div>
+            <button type="button" class="bv__clear" hidden>Clear<span class="vh"> item 3</span></button>
+          </fieldset>
+        </div>
+
+        <div class="bal__group" role="group" aria-labelledby="g-board">
+          <h3 class="bal__group-title" id="g-board">Board of Trustees</h3>
+
+          <fieldset class="bv bv--3" id="vote-dejonge" data-key="dejonge">
+            <legend><span class="bv__num">4a</span> <a href="#item-dejonge">Heidi De Jonge, Eastern Canada</a></legend>
+            <div class="bv__seg bv__seg--3">
+              <label><input type="radio" name="dejonge" value="approve"><span>Approve</span></label>
+              <label><input type="radio" name="dejonge" value="reject"><span>Do not approve</span></label>
+              <label><input type="radio" name="dejonge" value="region"><span>Not my region<span class="vh">: I don’t live in Eastern Canada</span></span></label>
+            </div>
+            <button type="button" class="bv__clear" hidden>Clear<span class="vh"> item 4a</span></button>
+          </fieldset>
+
+          <fieldset class="bv bv--3" id="vote-tinsley" data-key="tinsley">
+            <legend><span class="bv__num">4b</span> <a href="#item-tinsley">Jeremy Tinsley, BC and Western US</a></legend>
+            <div class="bv__seg bv__seg--3">
+              <label><input type="radio" name="tinsley" value="approve"><span>Approve</span></label>
+              <label><input type="radio" name="tinsley" value="reject"><span>Do not approve</span></label>
+              <label><input type="radio" name="tinsley" value="region"><span>Not my region<span class="vh">: I don’t live in BC or the western US</span></span></label>
+            </div>
+            <button type="button" class="bv__clear" hidden>Clear<span class="vh"> item 4b</span></button>
+          </fieldset>
+
+          <fieldset class="bv bv--2" id="vote-barthel" data-key="barthel">
+            <legend><span class="bv__num">4c</span> <a href="#item-barthel">Bob Barthel, Member&#8209;at&#8209;Large</a></legend>
+            <div class="bv__seg">
+              <label><input type="radio" name="barthel" value="approve"><span>Approve</span></label>
+              <label><input type="radio" name="barthel" value="reject"><span>Do not approve</span></label>
+            </div>
+            <button type="button" class="bv__clear" hidden>Clear<span class="vh"> item 4c</span></button>
+          </fieldset>
+        </div>
+
+        <div class="bal__foot">
+          <button type="button" class="af-send" data-go="review">Review and sign</button>
+        </div>
+      </section>
+
+      <!-- Step 2: review, identify, sign -->
+      <section class="bal__view" data-view="review" aria-labelledby="rev-title" hidden>
+        <div class="bal__head">
+          <h2 id="rev-title" tabindex="-1">Review and sign</h2>
+          <button type="button" class="bal__back" data-go="mark">Change my votes</button>
+        </div>
+
+        <ol class="rv" data-review></ol>
+
+        <div class="af-field">
+          <label for="f-name">Full name</label>
+          <p class="af-note" id="f-name-note">The name on your ICS membership.</p>
+          <input id="f-name" name="name" type="text" autocomplete="name" aria-describedby="f-name-note" maxlength="200" required>
+        </div>
+        <div class="af-field">
+          <label for="f-email">Email address</label>
+          <p class="af-note" id="f-email-note">We’ll write only if there is a question about your ballot.</p>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" aria-describedby="f-email-note" maxlength="200" required>
+        </div>
+        <div class="af-field">
+          <label for="f-signature">Signature</label>
+          <p class="af-note" id="f-signature-note">Type your full name to confirm that you are an ICS member and that you cast these votes yourself.</p>
+          <input id="f-signature" name="signature" type="text" autocomplete="off" aria-describedby="f-signature-note" maxlength="200" required>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Leave this empty</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="af-error" data-error role="alert" hidden></div>
+
+        <button type="submit" class="af-send" data-cast>Cast my ballot</button>
+        <div class="af-sending-rule" data-sending hidden></div>
+        <p class="af-privacy">Once cast, your ballot can’t be changed here. To correct it, email <a href="mailto:ics-communications@icscanada.edu">ics-communications@icscanada.edu</a>.</p>
+      </section>
+
+      <!-- Step 3: recorded -->
+      <section class="bal__view" data-view="done" aria-labelledby="done-title" hidden>
+        <div class="af-state">
+          <h2 id="done-title" tabindex="-1">Thank you. Your ballot is recorded.</h2>
+          <p data-done-when></p>
+          <ol class="rv rv--done" data-done-review></ol>
+          <p>Results will be reported at the AGM on Saturday, December 12, 2:00 to 4:00&nbsp;pm&nbsp;ET. <a href="https://us02web.zoom.us/j/81325686051?pwd=pEo2RfSbjbQefAiMXQFMUqb1nu39nf.1">Join on Zoom</a> <span class="quiet">(Meeting ID 813&nbsp;2568&nbsp;6051 · Passcode 613600)</span>.</p>
+          <p>To correct your ballot, email <a href="mailto:ics-communications@icscanada.edu">ics-communications@icscanada.edu</a>.</p>
+          <button type="button" class="bal__back bal__again" data-again>Cast a ballot for another member on this device</button>
+        </div>
+      </section>
+
+      <!-- Voting closed -->
+      <section class="bal__view" data-view="closed" aria-labelledby="closed-title" hidden>
+        <div class="af-state">
+          <h2 id="closed-title" tabindex="-1">Voting has closed</h2>
+          <p>Voting for the 2026 AGM closed on Saturday, December 12 at 4:00&nbsp;pm&nbsp;ET. The results were reported at the meeting.</p>
+          <p>Questions? Email <a href="mailto:ics-communications@icscanada.edu">ics-communications@icscanada.edu</a>.</p>
+        </div>
+      </section>
+    </form>
+  </section>
+
+  <!-- ============================================== the notes -->
+  <article class="notes" aria-labelledby="notes-title">
+    <h2 class="vh" id="notes-title">Notes from the members’ package</h2>
+    <p class="notes__intro">The notes below come from the <a href="https://supporters.icscanada.edu/26-agm/ICS-AGM-2026-Package.pdf">members’ package</a>, which also has the agenda and last year’s minutes.</p>
+
+    <section class="item" id="item-auditor" data-item="auditor" aria-labelledby="h-auditor">
+      <h3 id="h-auditor"><span class="item__num">1</span> Appointment of the auditor for 2026–27</h3>
+      <p class="item__q">Do you approve the appointment of Capstick McCollum &amp; Associates as the external auditor of the Institute for Christian Studies for the fiscal year ending June&nbsp;30, 2027?</p>
+      <p>At last year’s AGM, members appointed Capstick McCollum &amp; Associates as external auditor for 2025–26. This item asks members to appoint the firm again for the year ending June&nbsp;30, 2027.</p>
+      <p class="item__src">Members’ package, page 12<span class="item__back"> · <a href="#vote-auditor">Back to item 1 on your ballot</a></span></p>
+    </section>
+
+    <section class="item" id="item-statements" data-item="statements" aria-labelledby="h-statements">
+      <h3 id="h-statements"><span class="item__num">2</span> 2025–26 audited financial statements</h3>
+      <p class="item__q">Do you approve the audited financial statements for the year ended June&nbsp;30, 2026?</p>
+
+      <div class="fig">
+        <table>
+          <caption>Statement of financial position <span>Canadian dollars, as at June 30</span></caption>
+          <thead><tr><th scope="col"><span class="vh">Line</span></th><th scope="col">2026</th><th scope="col">2025</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Assets</th><td>1,500,688</td><td>1,686,657</td></tr>
+            <tr><th scope="row">Liabilities</th><td>74,527</td><td>133,323</td></tr>
+            <tr><th scope="row">Fund balances</th><td>1,426,161</td><td>1,553,334</td></tr>
+            <tr class="tot"><th scope="row">Total liabilities and fund balances</th><td>1,500,688</td><td>1,686,657</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="sub"><th scope="rowgroup" colspan="3">Fund balances represented by</th></tr>
+            <tr><th scope="row">General Fund</th><td>972,028</td><td>1,093,651</td></tr>
+            <tr><th scope="row">Restricted Funds</th><td>422,506</td><td>422,940</td></tr>
+            <tr><th scope="row">Fixed Asset Fund</th><td>31,627</td><td>36,743</td></tr>
+            <tr class="tot"><th scope="row">Total fund balances</th><td>1,426,161</td><td>1,553,334</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="fig fig--pair">
+        <table>
+          <caption>Revenues, 2025–26</caption>
+          <thead><tr><th scope="col"><span class="vh">Source</span></th><th scope="col">Amount</th><th scope="col">Share</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Tuition and fees</th><td>253,162</td><td>20%</td></tr>
+            <tr><th scope="row">Donation income</th><td>745,318</td><td>59%</td></tr>
+            <tr><th scope="row">Other income</th><td>86,107</td><td>7%</td></tr>
+            <tr><th scope="row">Interfund transfers</th><td>56,476</td><td>4%</td></tr>
+            <tr><th scope="row">Investment income</th><td>114,329</td><td>9%</td></tr>
+            <tr class="tot"><th scope="row">Total including transfers</th><td>1,255,392</td><td>100%</td></tr>
+          </tbody>
+        </table>
+        <table>
+          <caption>Expenditures, 2025–26</caption>
+          <thead><tr><th scope="col"><span class="vh">Category</span></th><th scope="col">Amount</th><th scope="col">Share</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Salaries, benefits, allowances</th><td>997,880</td><td>72%</td></tr>
+            <tr><th scope="row">Academic and research</th><td>138,437</td><td>10%</td></tr>
+            <tr><th scope="row">Rent</th><td>51,200</td><td>4%</td></tr>
+            <tr><th scope="row">Consulting and professional fees</th><td>98,780</td><td>7%</td></tr>
+            <tr><th scope="row">Office, supplies and overhead</th><td>60,226</td><td>4%</td></tr>
+            <tr><th scope="row">Conferences, lectures, events</th><td>18,049</td><td>1%</td></tr>
+            <tr><th scope="row">Advertising and promotion</th><td>12,443</td><td>1%</td></tr>
+            <tr class="tot"><th scope="row">Total expenditures</th><td>1,377,015</td><td>100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="fig">
+        <table>
+          <caption>Donation income, 2025–26</caption>
+          <thead><tr><th scope="col"><span class="vh">Source</span></th><th scope="col">Amount</th><th scope="col">Share</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">General donations</th><td>577,514</td><td>77%</td></tr>
+            <tr><th scope="row">Church contributions</th><td>36,794</td><td>5%</td></tr>
+            <tr><th scope="row">Bequests</th><td>131,010</td><td>18%</td></tr>
+            <tr class="tot"><th scope="row">Total donation income</th><td>745,318</td><td>100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Other income includes conferences, grants and other revenue. Interfund transfers are shown separately from operating revenue. The General Fund deficit after transfers was $121,623. The complete audited financial statements are available on request.</p>
+      <p class="item__src">Members’ package, pages 14–15<span class="item__back"> · <a href="#vote-statements">Back to item 2 on your ballot</a></span></p>
+    </section>
+
+    <section class="item" id="item-budget" data-item="budget" aria-labelledby="h-budget">
+      <h3 id="h-budget"><span class="item__num">3</span> 2026–27 operating budget</h3>
+      <p class="item__q">Do you ratify the operating budget for the fiscal year ending June&nbsp;30, 2027?</p>
+
+      <p class="fig__cap" id="cap-budget">Proposed statement of operations, 2026–27 <span>Canadian dollars</span></p>
+      <div class="fig fig--wide" role="region" aria-labelledby="cap-budget" tabindex="0">
+        <table aria-labelledby="cap-budget">
+          <thead><tr><th scope="col"><span class="vh">Line</span></th><th scope="col">General Fund</th><th scope="col">Fixed assets</th><th scope="col">Restricted</th><th scope="col">Total</th></tr></thead>
+          <tbody>
+            <tr class="sub"><th scope="rowgroup" colspan="5">Revenues</th></tr>
+            <tr><th scope="row">Bequests</th><td>100,000</td><td>–</td><td>–</td><td>100,000</td></tr>
+            <tr><th scope="row">Church donations</th><td>50,000</td><td>–</td><td>–</td><td>50,000</td></tr>
+            <tr><th scope="row">Donations</th><td>648,500</td><td>–</td><td>–</td><td>648,500</td></tr>
+            <tr><th scope="row">Grants</th><td>17,918</td><td>–</td><td>160,000</td><td>177,918</td></tr>
+            <tr><th scope="row">Investment income</th><td>50,000</td><td>–</td><td>15,000</td><td>65,000</td></tr>
+            <tr><th scope="row">Other revenue</th><td>101,750</td><td>–</td><td>–</td><td>101,750</td></tr>
+            <tr><th scope="row">Tuition</th><td>339,800</td><td>–</td><td>–</td><td>339,800</td></tr>
+            <tr class="tot"><th scope="row">Total revenues</th><td>1,307,968</td><td>–</td><td>175,000</td><td>1,482,968</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="sub"><th scope="rowgroup" colspan="5">Expenses</th></tr>
+            <tr><th scope="row">Salaries, benefits, allowances</th><td>1,106,100</td><td>–</td><td>–</td><td>1,106,100</td></tr>
+            <tr><th scope="row">Academic and research</th><td>60,150</td><td>–</td><td>160,000</td><td>220,150</td></tr>
+            <tr><th scope="row">Rent</th><td>55,000</td><td>–</td><td>–</td><td>55,000</td></tr>
+            <tr><th scope="row">Consulting and professional fees</th><td>132,600</td><td>–</td><td>–</td><td>132,600</td></tr>
+            <tr><th scope="row">Office, supplies and overhead</th><td>76,300</td><td>–</td><td>–</td><td>76,300</td></tr>
+            <tr><th scope="row">Conferences, lectures, events</th><td>37,500</td><td>–</td><td>–</td><td>37,500</td></tr>
+            <tr><th scope="row">Advertising and promotion</th><td>17,620</td><td>–</td><td>–</td><td>17,620</td></tr>
+            <tr><th scope="row">Depreciation and amortization</th><td>–</td><td>4,000</td><td>–</td><td>4,000</td></tr>
+            <tr class="tot"><th scope="row">Total expenses</th><td>1,485,270</td><td>4,000</td><td>160,000</td><td>1,649,270</td></tr>
+          </tbody>
+          <tbody>
+            <tr><th scope="row">Deficit or excess before transfers</th><td>(177,302)</td><td>(4,000)</td><td>15,000</td><td>(166,302)</td></tr>
+            <tr><th scope="row">Interfund transfers</th><td>32,111</td><td>–</td><td>(32,111)</td><td>–</td></tr>
+            <tr class="tot"><th scope="row">Deficit after transfers</th><td>(145,191)</td><td>(4,000)</td><td>(17,111)</td><td>(166,302)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The budget proposes revenues of $1,482,968 and expenses of $1,649,270, a deficit of $166,302 across all funds. The figures are from the Finance Committee workbook distributed for the May 29, 2026 Board meeting.</p>
+      <p class="item__src">Members’ package, page 16<span class="item__back"> · <a href="#vote-budget">Back to item 3 on your ballot</a></span></p>
+    </section>
+
+    <section class="item item--board" aria-labelledby="h-board">
+      <h3 id="h-board"><span class="item__num">4</span> Election to the Board of Trustees</h3>
+      <p>Three nominees stand for election. A regional seat is decided by the members who live in that region: if you live elsewhere, choose “Not my region.” We check each regional vote against our membership records before counting it, so if you aren’t sure of your region, vote and we’ll check. Every member may vote for the Member-at-Large seat.</p>
+
+      <div class="nominee" id="item-dejonge" data-item="dejonge">
+        <img src="img/dejonge.jpg" alt="Heidi De Jonge" width="560" height="840" loading="lazy">
+        <div>
+          <h4><span class="item__num">4a</span> Heidi De Jonge</h4>
+          <p class="nominee__seat">Eastern Canada · only members in Eastern Canada vote on this seat</p>
+          <p>Heidi De Jonge is a pastor, chaplain, and restorative practitioner based in Kingston, Ontario. She serves as a spiritual care provider at Providence Care Hospice’s AB Smith Homestead House and as an associate chaplain in Queen’s University’s Office of Faith and Spiritual Life, where her work focuses primarily on grief and loss.</p>
+          <p>Heidi is also a trainer and coach with The Colossian Forum, helping organizations transform their conflict culture. Since 2022, she has offered restorative practices to churches experiencing conflict and trained practitioners in that work.</p>
+          <p>Her ministry experience includes ten years as pastor of Westside Fellowship Christian Reformed Church in Kingston, earlier congregational ministry at Harderwyk CRC in Holland, Michigan, and service as Pastor for Discernment at Calvin Theological Seminary. Across these roles, she has worked in preaching, pastoral care, leadership development, vocational discernment, and community formation.</p>
+          <p>She holds a Doctor of Ministry from Western Theological Seminary, a Master of Divinity from Calvin Theological Seminary, and a bachelor’s degree in philosophy and psychology from Dordt University. Her doctoral dissertation, “Truthing in Love: Engaging Conflict with the Disarming Love of God,” reflects her continuing interest in faith, conflict, and reconciliation.</p>
+          <p class="item__src">Members’ package, page 18<span class="item__back"> · <a href="#vote-dejonge">Back to item 4a on your ballot</a></span></p>
+        </div>
+      </div>
+
+      <div class="nominee" id="item-tinsley" data-item="tinsley">
+        <img src="img/tinsley.jpg" alt="Jeremy Tinsley" width="560" height="907" loading="lazy">
+        <div>
+          <h4><span class="item__num">4b</span> Jeremy Tinsley</h4>
+          <p class="nominee__seat">BC and Western US · only members in British Columbia and the western United States vote on this seat</p>
+          <p>Jeremy Tinsley serves as Superintendent at Vancouver Christian School in Vancouver, BC. A graduate of Abbotsford Christian School and Dordt University, he began his career in education as a teacher at a small Christian school in rural Iowa, followed by five years at Kyiv International School in Ukraine. He and his wife later moved to Vancouver Island, where he spent 12 years as vice principal and principal at Duncan Christian School.</p>
+          <p>Throughout his career, God has worked through the many people Jeremy has known to shape his leadership. He finds joy in supporting Christian educational communities as they equip students to know, love, and serve the Lord and others.</p>
+          <p>Jeremy and his wife, Jen, attend Tenth Church in Vancouver and enjoy backpacking along BC’s coastal and mountain trails. They have three children: two attending university and one in grade twelve at VCS.</p>
+          <p class="item__src">Members’ package, page 17<span class="item__back"> · <a href="#vote-tinsley">Back to item 4b on your ballot</a></span></p>
+        </div>
+      </div>
+
+      <div class="nominee" id="item-barthel" data-item="barthel">
+        <img src="img/barthel.jpg" alt="Bob Barthel" width="560" height="743" loading="lazy">
+        <div>
+          <h4><span class="item__num">4c</span> Bob Barthel</h4>
+          <p class="nominee__seat">Member-at-Large · every member may vote on this seat</p>
+          <p>Bob Barthel is a retired educational leader with 40 years of experience in education, including 20 years in school leadership. He holds a Bachelor of Arts from Calvin University and a Master of Worldview Studies from the Institute for Christian Studies.</p>
+          <p>Bob served as a school principal and district principal in Christian and public school settings. He spent five years as District Principal with Red Deer Public School District, supporting educational leadership and learning across the district.</p>
+          <p>His commitment to Christian education also took him and his family to Honduras for a year at Academia Los Pinares in partnership with World Renew. That experience broadened his perspective on the relationship between faith, learning, and community in different cultural contexts.</p>
+          <p>Bob has served on church boards and other committees and boards, including the Ten Thousand Villages board. He brings experience in governance, organizational leadership, and community engagement, alongside a deep interest in Christian worldview and education’s contribution to the common good.</p>
+          <p>In retirement, he looks forward to contributing his educational leadership, governance experience, international perspective, and commitment to Christian education to the mission and future of ICS.</p>
+          <p class="item__src">Members’ package, page 19<span class="item__back"> · <a href="#vote-barthel">Back to item 4c on your ballot</a></span></p>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="container foot__in">
+    <p><strong>Institute for Christian Studies</strong> · 59 St. George Street, Toronto, Ontario M5S 2E6</p>
+    <p>Questions about your ballot? Email <a href="mailto:ics-communications@icscanada.edu">ics-communications@icscanada.edu</a>. Trouble with this page? Use the <a href="https://forms.gle/4aiR7DFHBDutPobf7">Google Form version of the ballot</a>.</p>
+  </div>
+</footer>
+
+<script src="ballot.js"></script>
+</body>
+</html>
