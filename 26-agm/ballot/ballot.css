@@ -664,10 +664,48 @@ a { color: inherit; }
   font-size: 0.82rem;
   color: var(--accent-deep);
 }
-.fig--pair {
+/* Share of total, drawn as in the members' package: each bar is scaled to the
+   largest row in its table, and the percentage beside it carries the value. */
+.fig--bars th.sh { width: 44%; }
+.fig td.sh { padding-left: 1.4rem; }
+.sh__in {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.6rem 2.2rem;
+  grid-template-columns: minmax(0, 1fr) 2.7em;
+  align-items: center;
+  column-gap: 0.7rem;
+}
+.sh__in > span:last-child { text-align: right; color: var(--quiet); }
+.sh__bar {
+  display: block;
+  width: calc(var(--v) * 100%);
+  min-width: 2px;
+  height: 0.5rem;
+  border-radius: 1px;
+  background: var(--wine);
+}
+@media (forced-colors: active) { .sh__bar { background: CanvasText; } }
+
+/* Too narrow for a bar beside each row: the bar drops to a line of its own,
+   under the label, figure and percentage it belongs to. */
+.fig--bars { container-type: inline-size; }
+@container (max-width: 26rem) {
+  .fig--bars table, .fig--bars caption, .fig--bars thead, .fig--bars tbody { display: block; }
+  .fig--bars thead tr { border-bottom: 1.5px solid var(--wine); }
+  .fig--bars thead th { border-bottom: 0; }
+  .fig--bars tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto 3.7em;
+    column-gap: 0.8rem;
+    align-items: baseline;
+  }
+  .fig--bars th, .fig--bars td { display: block; }
+  .fig--bars thead th, .fig--bars td { padding-left: 0; }
+  .fig--bars th.sh { width: auto; }
+  .fig--bars .sh__long { display: none; }
+  .fig--bars td.sh, .fig--bars .sh__in { display: contents; }
+  .fig--bars tr.tot td.sh { display: block; grid-column: 3; padding-left: 0; text-align: right; }
+  .fig--bars .sh__in > span:last-child { grid-column: 3; grid-row: 1; }
+  .fig--bars .sh__bar { grid-column: 1 / -1; grid-row: 2; margin: -0.1rem 0 0.6rem; }
 }
 .item .fig__cap { max-width: none; font-size: 0.9rem; line-height: 1.35; }
 .fig--wide { overflow-x: auto; scrollbar-width: thin; container-type: inline-size; }
@@ -762,7 +800,6 @@ a { color: inherit; }
 @media (max-width: 1080px) {
   :root { --bal-w: 22rem; }
   .page { gap: 0 2.4rem; }
-  .fig--pair { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* One column: the ballot first (it is the task), the notes after,
