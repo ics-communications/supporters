@@ -398,4 +398,12 @@
       if (s && s.open === false && !sending) show('closed');
     }).catch(function () {});
   }
+
+  // Print the minutes in full: a closed <details> would print as one line.
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details.mins:not([open])').forEach(function (d) { d.open = true; d.dataset.printOpened = '1'; });
+  });
+  window.addEventListener('afterprint', function () {
+    document.querySelectorAll('details[data-print-opened]').forEach(function (d) { d.open = false; delete d.dataset.printOpened; });
+  });
 })();
