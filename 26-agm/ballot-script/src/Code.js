@@ -333,7 +333,8 @@ function doPost(e) {
 }
 
 /** Lets the page ask whether voting is open (for a ballot closed by hand). */
-function doGet() {
+function doGet(e) {
+  if (e && e.parameter && e.parameter.mail === 'status') return json_(Object.assign({ ok: true }, mailStatus_()));
   let open = new Date() < CLOSES_AT;
   try {
     open = open && getForm_().isAcceptingResponses();
@@ -476,8 +477,30 @@ function sendConfirmation_(values, when, replaces) {
     return true;
   } catch (err) {
     console.error(err);
+    noteMailError_(err);
     return false;
   }
+}
+
+// Keeps the last sending error (addresses removed) so ?mail=status can report it.
+function noteMailError_(err) {
+  try {
+    PropertiesService.getScriptProperties().setProperty('mailError', new Date().toISOString() + ' ' + redact_(err));
+  } catch (e) { console.error(e); }
+}
+
+function redact_(err) {
+  return String((err && err.message) || err).replace(/[^\s@]+@[^\s@]+/g, '[address]').slice(0, 300);
+}
+
+function mailStatus_() {
+  const out = { lastError: PropertiesService.getScriptProperties().getProperty('mailError') || null };
+  try {
+    out.quota = MailApp.getRemainingDailyQuota();
+  } catch (err) {
+    out.quotaError = redact_(err);
+  }
+  return out;
 }
 
 function confirmationEmail_(values, when, replaces) {
@@ -525,16 +548,31 @@ function confirmationEmail_(values, when, replaces) {
 }
 
 /**
- * Run once from the Apps Script editor after this change. It asks for the new
- * "send email as you" permission and sends a sample confirmation to the
- * script's own account. Nothing is recorded on the ballot.
+ * Run once from the Apps Script editor, signed in as the account that owns the
+ * web app. It asks for the "send email as you" permission and sends a sample
+ * confirmation to HELP_EMAIL. Nothing is recorded on the ballot.
  */
 function sendTestConfirmation() {
-  const to = Session.getEffectiveUser().getEmail();
+  const to = HELP_EMAIL;
   const values = { firstName: 'Sample', lastName: 'Member', email: to, signature: 'Sample Member',
     auditor: APPROVE, statements: APPROVE, budget: DO_NOT_APPROVE, dejonge: 'I don’t live in Eastern Canada', barthel: APPROVE };
   const ok = sendConfirmation_(values, new Date(), false);
   Logger.log(ok ? 'Sample confirmation sent to %s.' : 'Sending failed; see the log above. (%s)', to);
+}
+
+/**
+ * Run from the Apps Script editor if email isn't being sent. It logs whether
+ * this account has approved every permission the script needs and, if not, a
+ * link to approve the missing ones (such as "send email as you"). Open the link
+ * signed in as the account that owns the web app.
+ */
+function authorizeEmail() {
+  const info = ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL);
+  if (info.getAuthorizationStatus() === ScriptApp.AuthorizationStatus.NOT_REQUIRED) {
+    Logger.log('All permissions are approved, including sending email. Run sendTestConfirmation to check.');
+  } else {
+    Logger.log('Some permissions are not approved yet. Open this link and approve them: %s', info.getAuthorizationUrl());
+  }
 }
 
 function digest_(s) {
