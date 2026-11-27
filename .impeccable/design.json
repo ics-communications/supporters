@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T20:49:54+00:00",
+  "title": "Design System: ICS Supporters",
+  "extensions": {
+    "colorMeta": {
+      "wine": {
+        "role": "primary",
+        "displayName": "Ecclesiastical Wine",
+        "canonical": "#9B0D24",
+        "tonalRamp": [
+          "#1E0102",
+          "#470B10",
+          "#751D23",
+          "#A73138",
+          "#CE5558",
+          "#E78583",
+          "#FEB2AF",
+          "#FFE0DE"
+        ],
+        "oklch": "oklch(44.1% 0.170 21.7)"
+      },
+      "wine-deep": {
+        "role": "primary",
+        "displayName": "Deep Wine",
+        "canonical": "#7A0A1C",
+        "tonalRamp": [
+          "#1B0304",
+          "#421214",
+          "#6E2729",
+          "#9D3D40",
+          "#C35F60",
+          "#DD8B89",
+          "#F6B7B4",
+          "#FFE3E1"
+        ],
+        "oklch": "oklch(37.2% 0.142 21.2)"
+      },
+      "wine-mid": {
+        "role": "primary",
+        "displayName": "ICS Brand Red",
+        "canonical": "#BE0B28",
+        "tonalRamp": [
+          "#200001",
+          "#4C0109",
+          "#7D0C1A",
+          "#B11C2B",
+          "#DA484C",
+          "#F27D7A",
+          "#FFAEA9",
+          "#FFDEDA"
+        ],
+        "oklch": "oklch(50.9% 0.201 23.0)"
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Burnt Copper",
+        "canonical": "#A85A32",
+        "tonalRamp": [
+          "#180601",
+          "#3C1A08",
+          "#653218",
+          "#904C29",
+          "#B56D4A",
+          "#D19579",
+          "#ECBEA8",
+          "#FFE7D9"
+        ],
+        "oklch": "oklch(55.2% 0.116 46.3)"
+      },
+      "accent-light": {
+        "role": "secondary",
+        "displayName": "Light Copper",
+        "canonical": "#C87A52",
+        "tonalRamp": [
+          "#170601",
+          "#3B1B09",
+          "#643319",
+          "#8F4D2A",
+          "#B46E4B",
+          "#CF967A",
+          "#EABEA9",
+          "#FFE8DA"
+        ],
+        "oklch": "oklch(65.5% 0.112 47.3)"
+      },
+      "accent-on-wine": {
+        "role": "secondary",
+        "displayName": "Copper Glow",
+        "canonical": "#E9B48F",
+        "tonalRamp": [
+          "#150E0A",
+          "#362316",
+          "#633C22",
+          "#995728",
+          "#D5702A",
+          "#D7976A",
+          "#E0BFA9",
+          "#F2E9E3"
+        ]
+      },
+      "accent-muted": {
+        "role": "secondary",
+        "displayName": "Muted Copper",
+        "canonical": "#8E4A28",
+        "tonalRamp": [
+          "#170602",
+          "#3A1C0C",
+          "#62341E",
+          "#8C4F31",
+          "#B17051",
+          "#CD977E",
+          "#E8BFAC",
+          "#FFE8DC"
+        ],
+        "oklch": "oklch(48.6% 0.103 45.7)"
+      },
+      "accent-pale": {
+        "role": "secondary",
+        "displayName": "Copper Blush",
+        "canonical": "#EEDACA",
+        "tonalRamp": [
+          "#0E0A07",
+          "#2B231D",
+          "#4B4036",
+          "#6D5E51",
+          "#8F7F72",
+          "#B0A297",
+          "#D1C7BF",
+          "#F4EDE8"
+        ],
+        "oklch": "oklch(90.0% 0.031 61.1)"
+      },
+      "accent-deep": {
+        "role": "secondary",
+        "displayName": "Deep Copper",
+        "canonical": "#7A4020",
+        "tonalRamp": [
+          "#150702",
+          "#381D0F",
+          "#5E3622",
+          "#885236",
+          "#AC7356",
+          "#C89982",
+          "#E5C0AF",
+          "#FFE9DD"
+        ],
+        "oklch": "oklch(43.8% 0.092 47.7)"
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "#FDFBF7",
+        "tonalRamp": [
+          "#0C0B09",
+          "#262522",
+          "#43423F",
+          "#62615E",
+          "#84827F",
+          "#A6A5A1",
+          "#CBC9C5",
+          "#F0EEEB"
+        ],
+        "oklch": "oklch(98.9% 0.006 84.6)"
+      },
+      "cream-warm": {
+        "role": "neutral",
+        "displayName": "Warm Cream",
+        "canonical": "#F9F5ED",
+        "tonalRamp": [
+          "#0C0B09",
+          "#262522",
+          "#44423D",
+          "#64615B",
+          "#85827B",
+          "#A7A59F",
+          "#CBC9C5",
+          "#F0EEEB"
+        ],
+        "oklch": "oklch(97.1% 0.011 84.6)"
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "canonical": "#F0E9DD",
+        "tonalRamp": [
+          "#0C0B08",
+          "#272520",
+          "#45413B",
+          "#666057",
+          "#878278",
+          "#A9A49C",
+          "#CCC9C2",
+          "#F0EEEA"
+        ],
+        "oklch": "oklch(93.6% 0.018 81.3)"
+      },
+      "text-dark": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#2E1318",
+        "tonalRamp": [
+          "#11090A",
+          "#2F2022",
+          "#513B3E",
+          "#76585C",
+          "#99797D",
+          "#B89DA1",
+          "#D8C3C6",
+          "#F8EBEC"
+        ],
+        "oklch": "oklch(22.9% 0.045 9.5)"
+      },
+      "text-body": {
+        "role": "neutral",
+        "displayName": "Body Umber-Grey",
+        "canonical": "#3A3330",
+        "tonalRamp": [
+          "#0D0B09",
+          "#282423",
+          "#46413E",
+          "#675F5C",
+          "#88807D",
+          "#AAA3A1",
+          "#CDC8C6",
+          "#F1EDEC"
+        ],
+        "oklch": "oklch(32.7% 0.011 44.7)"
+      },
+      "text-on-dark": {
+        "role": "neutral",
+        "displayName": "Rose Mist",
+        "canonical": "#E8C2C2",
+        "tonalRamp": [
+          "#110909",
+          "#2F2121",
+          "#513B3C",
+          "#765859",
+          "#997979",
+          "#B89E9E",
+          "#D8C4C3",
+          "#F8EBEB"
+        ],
+        "oklch": "oklch(84.7% 0.043 18.0)"
+      },
+      "quiet": {
+        "role": "neutral",
+        "displayName": "Quiet",
+        "canonical": "#6B655F",
+        "tonalRamp": [
+          "#100F0F",
+          "#282625",
+          "#45423F",
+          "#66615C",
+          "#877F78",
+          "#A5A19C",
+          "#C7C4C2",
+          "#EBEBEA"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Wine Hairline",
+        "canonical": "rgba(155, 13, 36, 0.13)",
+        "tonalRamp": [
+          "#1E0102",
+          "#470B10",
+          "#751D23",
+          "#A73138",
+          "#CE5558",
+          "#E78583",
+          "#FEB2AF",
+          "#FFE0DE"
+        ],
+        "note": "Wine at reduced alpha; the ramp is wine's.",
+        "aliases": [
+          "rgba(155,13,36,0.13)"
+        ]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Faint Hairline",
+        "canonical": "rgba(155, 13, 36, 0.07)",
+        "tonalRamp": [
+          "#1E0102",
+          "#470B10",
+          "#751D23",
+          "#A73138",
+          "#CE5558",
+          "#E78583",
+          "#FEB2AF",
+          "#FFE0DE"
+        ],
+        "note": "Wine at reduced alpha; the ramp is wine's."
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "rgba(155, 13, 36, 0.18)",
+        "tonalRamp": [
+          "#1E0102",
+          "#470B10",
+          "#751D23",
+          "#A73138",
+          "#CE5558",
+          "#E78583",
+          "#FEB2AF",
+          "#FFE0DE"
+        ],
+        "note": "Wine at reduced alpha; the ramp is wine's."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero title; one italic phrase in copper glow."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Item titles in the notes, wine, copper number at 0.8em."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel heading, nominee names, state headings."
+      },
+      "voice": {
+        "displayName": "Voice",
+        "purpose": "Italic deep-copper question put to members; 0.8-1.02rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Notes text, max 64ch."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Ballot legends and field labels."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase button label."
+      },
+      "fact-label": {
+        "displayName": "Fact Label",
+        "purpose": "Uppercase hero definition terms and ledger column headers; labels data only."
+      },
+      "ledger": {
+        "displayName": "Ledger",
+        "purpose": "Financial tables, tabular lining numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-lift",
+        "value": "0 14px 40px rgba(155, 13, 36, 0.07)",
+        "purpose": "The one lifted working surface (ballot panel)."
+      },
+      {
+        "name": "copper-glow",
+        "value": "0 6px 20px rgba(168, 90, 50, 0.3)",
+        "purpose": "Accent button hover, with a 1px rise."
+      },
+      {
+        "name": "focus-ring",
+        "value": "0 0 0 3px rgba(155, 13, 36, 0.1)",
+        "purpose": "Focused text field."
+      },
+      {
+        "name": "focus-ring-invalid",
+        "value": "0 0 0 3px rgba(190, 11, 40, 0.12)",
+        "purpose": "Invalid text field."
+      },
+      {
+        "name": "focus-outline",
+        "value": "outline: 2px solid #9B0D24; outline-offset: 3px",
+        "purpose": "Global :focus-visible; copper glow (#E9B48F) on wine grounds."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "purpose": "Default easing for state changes (--ease)."
+      },
+      {
+        "name": "out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Skip link entrance (--out)."
+      },
+      {
+        "name": "state",
+        "value": "0.18s-0.25s",
+        "purpose": "Segment fill 0.18s, reading highlight and links 0.2s, button 0.25s."
+      },
+      {
+        "name": "sending-thread",
+        "value": "1.6s cubic-bezier(0.65, 0, 0.35, 1) infinite",
+        "purpose": "Copper thread while a ballot sends; static light copper under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "1080px",
+        "purpose": "Panel 22rem, gap 2.4rem, ledger pairs stack."
+      },
+      {
+        "name": "single-column",
+        "value": "900px",
+        "purpose": "Ballot first, notes after; panel no longer sticky; container pad 1.25rem."
+      },
+      {
+        "name": "phone",
+        "value": "560px",
+        "purpose": "Hero facts and nominee blocks stack."
+      }
+    ],
+    "fonts": {
+      "hosting": "Self-hosted variable woff2 (26-agm/ballot/fonts/fonts.css): Libre Baskerville 400-700 and 400 italic, Outfit 300-700; latin and latin-ext subsets; font-display swap.",
+      "rootFontSize": "110%"
+    },
+    "scope": "Documents the web world used by the 2026 AGM ballot (26-agm/ballot/). 26-impact/ and 26-annual/ are separate Spectral report surfaces not governed by this system."
+  },
+  "components": [
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Primary action: square copper button, full width in the ballot panel.",
+      "html": "<button class=\"ds-send\">Review and sign</button>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-send{display:block;width:100%;min-height:48px;padding:0.75rem 1.6rem;font-family:var(--sans);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:0;border-radius:0;cursor:pointer;transition:background-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);} .ds-send:hover{background:var(--accent-deep);transform:translateY(-1px);box-shadow:0 6px 20px rgba(168,90,50,0.3);} .ds-send:active{transform:none;box-shadow:none;} .ds-send:focus-visible{outline:2px solid var(--wine);outline-offset:3px;} .ds-send:disabled{background:var(--accent-muted);cursor:progress;transform:none;box-shadow:none;}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "Square cream field with wine focus ring; invalid state in brand red.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-n\">Your name</label><input id=\"ds-n\" type=\"text\" value=\"\"><span class=\"ds-note\">As it appears on the membership list.</span></div>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-field{display:flex;flex-direction:column;gap:0.3rem;} .ds-field label{font-size:0.8rem;font-weight:600;letter-spacing:0.02em;color:var(--text-dark);} .ds-field input{font-family:var(--sans);font-size:max(16px,0.95rem);color:var(--text-dark);padding:0.65em 0.9em;min-height:46px;border:1.5px solid var(--field);border-radius:0;background:var(--cream);outline:none;caret-color:var(--wine);transition:border-color .2s,box-shadow .2s;} .ds-field input:hover{border-color:rgba(155,13,36,0.34);} .ds-field input:focus{border-color:var(--wine);box-shadow:0 0 0 3px rgba(155,13,36,0.1);} .ds-note{font-size:0.76rem;line-height:1.5;color:var(--quiet);}"
+    },
+    {
+      "name": "Vote Row with Segmented Choices",
+      "kind": "custom",
+      "refersTo": "segment",
+      "description": "Ballot item: legend with muted-copper number, square segment bar, chosen segment filled wine.",
+      "html": "<fieldset class=\"ds-bv\"><legend><span class=\"ds-num\">1</span> <a href=\"#\">Auditor for 2026–27</a></legend><div class=\"ds-seg\"><label><input type=\"radio\" name=\"ds-a\" checked><span>Approve</span></label><label><input type=\"radio\" name=\"ds-a\"><span>Do not approve</span></label></div></fieldset>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-bv{border:0;padding:0.42rem 0;} .ds-bv legend{font-size:0.8rem;font-weight:600;line-height:1.4;color:var(--text-dark);margin-bottom:0.3rem;} .ds-bv legend a{color:inherit;text-decoration:underline;text-decoration-color:rgba(155,13,36,0.28);text-underline-offset:0.22em;} .ds-bv legend a:hover{color:var(--wine);} .ds-num{display:inline-block;min-width:1.6em;font-weight:700;color:var(--accent-muted);font-variant-numeric:tabular-nums;} .ds-seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1.5px solid var(--field);background:var(--cream);} .ds-seg label{position:relative;display:flex;cursor:pointer;} .ds-seg label+label{border-left:1px solid var(--field);} .ds-seg input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;} .ds-seg span{flex:1;display:grid;place-items:center;min-height:44px;padding:0.35rem 0.4rem;font-size:0.78rem;font-weight:500;color:var(--text-dark);transition:background-color .18s var(--ease),color .18s var(--ease);} .ds-seg label:hover span{background:rgba(155,13,36,0.05);} .ds-seg input:checked+span{background:var(--wine);color:var(--cream);font-weight:600;} .ds-seg input:focus-visible+span{outline:2px solid var(--wine);outline-offset:2px;position:relative;z-index:1;}"
+    },
+    {
+      "name": "Ballot Panel",
+      "kind": "card",
+      "refersTo": "ballot-panel",
+      "description": "The one lifted surface: cream-warm, 3px copper top rule, faint wine lift.",
+      "html": "<section class=\"ds-bal\"><div class=\"ds-head\"><h2>Your ballot</h2><p class=\"ds-count\"><span>2</span> of 6 marked</p></div><p class=\"ds-note\">Choose a title to read its notes. Blanks are allowed.</p><h3 class=\"ds-group\">Finances</h3><div class=\"ds-row is-reading\"><span class=\"ds-n\">1</span> Auditor for 2026–27</div><div class=\"ds-row\"><span class=\"ds-n\">2</span> Audited statements, 2025–26</div></section>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-bal{background:var(--cream-warm);border:1px solid var(--rule-soft);border-top:3px solid var(--accent);box-shadow:0 14px 40px rgba(155,13,36,0.07);padding:1.05rem 1.4rem 1.2rem;max-width:28rem;} .ds-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;} .ds-head h2{font-family:var(--serif);font-size:1.22rem;font-weight:700;line-height:1.25;color:var(--wine);margin:0;} .ds-count{font-size:0.78rem;font-weight:500;color:var(--quiet);font-variant-numeric:tabular-nums;margin:0;} .ds-count span{color:var(--wine);font-weight:700;} .ds-note{margin:0.3rem 0 0;font-family:var(--serif);font-style:italic;font-size:0.8rem;color:var(--accent-deep);} .ds-group{margin:0.6rem 0 0.2rem;padding-bottom:0.2rem;border-bottom:1px solid var(--rule);font-family:var(--serif);font-size:0.86rem;font-weight:700;color:var(--wine);} .ds-row{margin:0 -0.6rem;padding:0.42rem 0.6rem 0.5rem;border:1px solid transparent;font-size:0.8rem;font-weight:600;color:var(--text-dark);transition:background-color .2s var(--ease),border-color .2s var(--ease);} .ds-row.is-reading{background:#fff;border-color:var(--rule);} .ds-n{display:inline-block;min-width:1.6em;font-weight:700;color:var(--accent-muted);} .ds-row.is-reading .ds-n{color:var(--wine);}"
+    },
+    {
+      "name": "Hero with Facts",
+      "kind": "nav",
+      "refersTo": "hero",
+      "description": "Compact wine-deep hero: display title with copper-glow italic, facts as a definition list.",
+      "html": "<header class=\"ds-hero\"><div class=\"ds-in\"><div><h1>Ballot for the <em>2026 AGM</em></h1><p class=\"ds-sub\">Members meet on Zoom on Saturday, December 12.</p></div><dl><div><dt>Voting closes</dt><dd><time>Sat, Dec 12, 4:00 pm ET</time></dd></div><div><dt>Read first</dt><dd><a href=\"#\">Members’ package</a></dd></div></dl></div></header>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-hero{position:relative;background:var(--wine-deep);color:var(--cream);padding:1.15rem 1.5rem 1.35rem;} .ds-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 90%,rgba(168,90,50,0.12) 0%,transparent 50%),radial-gradient(ellipse at 85% 10%,rgba(190,11,40,0.18) 0%,transparent 55%);pointer-events:none;} .ds-hero::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-light) 40%,transparent 80%);} .ds-in{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:1rem 3rem;} .ds-hero h1{font-family:var(--serif);font-size:2rem;font-weight:700;line-height:1.12;letter-spacing:-0.01em;margin:0 0 0.45rem;} .ds-hero em{color:var(--accent-on-wine);} .ds-sub{margin:0;font-weight:300;font-size:0.92rem;color:var(--text-on-dark);} .ds-hero dl{display:grid;gap:0.6rem;margin:0;padding-left:1.6rem;border-left:1px solid rgba(233,180,143,0.22);} .ds-hero dt{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-on-wine);} .ds-hero dd{margin:0.1rem 0 0;font-size:0.9rem;} .ds-hero time{font-family:var(--serif);font-weight:700;} .ds-hero a{color:var(--cream);text-decoration-color:rgba(233,180,143,0.55);text-underline-offset:0.22em;transition:color .2s;} .ds-hero a:hover{color:var(--accent-on-wine);text-decoration-color:currentColor;} .ds-hero a:focus-visible{outline:2px solid var(--accent-on-wine);outline-offset:3px;}"
+    },
+    {
+      "name": "Ledger Table",
+      "kind": "custom",
+      "description": "Real financial table: serif caption, uppercase quiet headers over a wine rule, tabular figures.",
+      "html": "<table class=\"ds-led\"><caption>Operating budget <span>in dollars</span></caption><thead><tr><th></th><th>2025–26</th><th>2026–27</th></tr></thead><tbody><tr><th>Tuition</th><td>412,000</td><td>431,500</td></tr><tr><th>Donations</th><td>1,180,000</td><td>1,225,000</td></tr><tr class=\"tot\"><th>Total</th><td>1,592,000</td><td>1,656,500</td></tr></tbody></table>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-led{width:100%;border-collapse:collapse;font-size:0.8rem;line-height:1.35;font-variant-numeric:tabular-nums lining-nums;} .ds-led caption{caption-side:top;text-align:left;padding-bottom:0.5rem;font-family:var(--serif);font-size:0.9rem;font-weight:700;color:var(--text-dark);} .ds-led caption span{margin-left:0.4rem;font-family:var(--sans);font-size:0.76rem;font-weight:400;color:var(--quiet);} .ds-led thead th{padding:0.4rem 0 0.4rem 0.8rem;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:right;color:var(--quiet);border-bottom:1.5px solid var(--wine);} .ds-led tbody th{padding:0.42rem 0.8rem 0.42rem 0;font-weight:400;text-align:left;color:var(--text-body);} .ds-led td{padding:0.42rem 0 0.42rem 0.8rem;text-align:right;color:var(--text-dark);} .ds-led tbody tr{border-bottom:1px solid var(--rule-soft);} .ds-led tr.tot th,.ds-led tr.tot td{font-weight:600;color:var(--text-dark);} .ds-led tr.tot{border-bottom:1px solid var(--rule);}"
+    },
+    {
+      "name": "Review List",
+      "kind": "custom",
+      "description": "Ruled review of choices; answers right-aligned in wine, blanks in quiet italic serif.",
+      "html": "<ul class=\"ds-rv\"><li><span class=\"ds-n\">1</span><span>Auditor for 2026–27</span><span class=\"ds-c\">Approve</span></li><li><span class=\"ds-n\">2</span><span>Audited statements</span><span class=\"ds-c is-blank\">Left blank</span></li></ul>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-rv{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);} .ds-rv li{display:grid;grid-template-columns:1.75em minmax(0,1fr) auto;gap:0 0.5rem;align-items:baseline;padding:0.45rem 0;border-bottom:1px solid var(--rule-soft);font-size:0.8rem;line-height:1.4;} .ds-n{font-weight:700;color:var(--accent-muted);font-variant-numeric:tabular-nums;} .ds-c{font-weight:600;color:var(--wine);text-align:right;} .ds-c.is-blank{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--quiet);}"
+    },
+    {
+      "name": "Error Summary",
+      "kind": "custom",
+      "refersTo": "error-box",
+      "description": "Brand-red tinted box with a bold red lead; the only solid use of brand red.",
+      "html": "<div class=\"ds-err\"><strong>Your ballot was not sent.</strong>Check your connection and try again, or <a href=\"#\">use the Google Form</a>.</div>",
+      "css": ":host{--wine:#9B0D24;--wine-deep:#7A0A1C;--wine-mid:#BE0B28;--accent:#A85A32;--accent-light:#C87A52;--accent-on-wine:#E9B48F;--accent-muted:#8E4A28;--accent-pale:#EEDACA;--accent-deep:#7A4020;--cream:#FDFBF7;--cream-warm:#F9F5ED;--parchment:#F0E9DD;--text-dark:#2E1318;--text-body:#3A3330;--text-on-dark:#E8C2C2;--quiet:#6B655F;--rule:rgba(155,13,36,0.13);--rule-soft:rgba(155,13,36,0.07);--field:rgba(155,13,36,0.18);--serif:'Libre Baskerville',Georgia,serif;--sans:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(0.25,0.46,0.45,0.94);font-size:17.6px;font-family:var(--sans);color:var(--text-body);} .ds-err{padding:0.8em 1em;font-size:0.82rem;line-height:1.55;color:var(--text-dark);background:rgba(190,11,40,0.06);border:1px solid rgba(190,11,40,0.2);} .ds-err strong{display:block;font-weight:600;color:var(--wine-mid);margin-bottom:0.15rem;} .ds-err a{color:var(--wine);text-decoration-color:rgba(155,13,36,0.3);text-underline-offset:0.2em;} .ds-err a:hover{text-decoration-color:currentColor;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Scholar's Hearth",
+    "overview": "**Creative North Star: \"The Scholar's Hearth\"**\n\nThis repo has no identity of its own. Its web pages inherit the ics-site world (sibling repo `ics-site`, DESIGN.md \"The Scholar's Hearth\"), with the same token names, and restate it for pages that stand alone on supporters.icscanada.edu. The first and so far only page built in this world is the 2026 AGM ballot (`26-agm/ballot/`), and everything below is taken from its shipped CSS. Wine and cream carry the mass. Copper carries the voice, the calls to act and the rules. Libre Baskerville says things: titles, names, and an italic voice for the question being asked. Outfit states things: labels, figures, choices and running text. Corners are square. Depth comes from tone, with one lifted surface.\n\nThe ballot shows the world in an operational setting. The page is a reading column with a working panel beside it, and it is dense but calm. Figures sit in real ruled tables, choices are large square segments, and the state of the task is always in view. Both faces are self-hosted as variable woff2 files (`fonts/fonts.css`), so the page loads nothing from third parties.\n\nScope: DESIGN.md documents the web world used by the ballot. The other surfaces in this repo (`26-impact/`, `26-annual/`) are separate report pieces set in Spectral with their own palette, and this system does not govern them.",
+    "keyCharacteristics": [
+      "A compact wine-deep hero over a cream page, with a copper hairline across its top.",
+      "One lifted surface per page: cream-warm, a 3px copper top rule, and a faint wine shadow.",
+      "Serif for what is said, sans for what is stated.",
+      "Wine fill marks a choice that has been made.",
+      "Square corners everywhere, and wine-tinted hairlines as the line language.",
+      "Tabular numerals wherever figures line up."
+    ],
+    "rules": [
+      {
+        "name": "The Copper Voice Rule",
+        "body": "Copper speaks and wine names. The italic voice is deep copper, and headings and names are wine. Never set a heading in copper, and never set the italic voice in wine.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Means Wrong Rule",
+        "body": "As a solid colour, brand red (`wine-mid`) appears only to mark an error. Selection, emphasis and state use wine.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Baskerville for what is said (titles, names, the italic question), Outfit for what is stated (labels, figures, choices, body).",
+        "section": "typography"
+      },
+      {
+        "name": "The Figures Line Up Rule",
+        "body": "Counts, days left, item numbers and every table figure use tabular numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Lifted Surface Rule",
+        "body": "A page lifts one surface, the thing the reader works in, and marks it with the 3px copper top rule. Everything else stays flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the ics-site token names and values exactly as listed. This repo restates that world and does not fork it.",
+      "Do mark a made choice with a wine fill and cream text, never with copper.",
+      "Do keep tap targets at 44px or more, and text inputs at 16px or more.",
+      "Do set every figure that lines up in tabular numerals, and set financial figures as real tables.",
+      "Do keep `rule`, `rule-soft` and `field` as wine-tinted hairlines, not greys.",
+      "Do self-host Libre Baskerville and Outfit as woff2 files."
+    ],
+    "donts": [
+      "Don't round corners on panels, segments, buttons or fields.",
+      "Don't lift more than one surface on a page.",
+      "Don't use solid brand red (`wine-mid`) for anything but errors.",
+      "Don't set light copper as text. It is for gradient rules only.",
+      "Don't introduce cool hues or neutral greys. Secondary text is Quiet (`quiet`)."
+    ]
+  }
+}
