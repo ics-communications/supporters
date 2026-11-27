@@ -253,6 +253,8 @@ function logLinks_(form) {
  * Test runs (dryRun) have ended: a ballot that asks for one is refused, so the
  * endpoint can't be used to tie up the lock without recording anything.
  * website: a hidden field people never see; anything in it is refused, never confirmed.
+ * Once recorded, the member is emailed a copy of their ballot (see sendConfirmation_);
+ * the reply says { ok, receivedAt, mailed }.
  * ---------------------------------------------------------------------- */
 
 const VOTE_VALUES = { approve: () => APPROVE, reject: () => DO_NOT_APPROVE, region: (spec) => 'I don’t live in ' + spec.region };
@@ -286,6 +288,7 @@ function doPost(e) {
 
     const lock = LockService.getScriptLock();
     lock.waitLock(25000);
+    let receivedAt, earlier, mailsSoFar;
     try {
       // A ballot sent twice (a retry after a timeout) is recorded once. The id
       // is kept in Script Properties (durable) as well as the cache (fast), and
@@ -302,15 +305,27 @@ function doPost(e) {
       }
 
       const response = buildResponse_(form, check.values);
-      const receivedAt = new Date().toISOString();
+      receivedAt = new Date().toISOString();
 
       response.submit();
       props.setProperty(key, receivedAt);
       cache.put(key, receivedAt, 21600);
-      return json_({ ok: true, receivedAt: receivedAt });
+
+      // Counted per member (name and address: two members may share an
+      // address) to say when a ballot replaces an earlier one, and per address
+      // to cap how many confirmations one address can be sent.
+      const memberKey = 'cast:' + digest_([check.values.firstName, check.values.lastName, check.values.email].join('|'));
+      const mailKey = 'mailed:' + digest_(check.values.email);
+      earlier = Number(props.getProperty(memberKey) || 0);
+      mailsSoFar = Number(props.getProperty(mailKey) || 0);
+      props.setProperty(memberKey, String(earlier + 1));
+      if (mailsSoFar < MAIL_CAP) props.setProperty(mailKey, String(mailsSoFar + 1));
     } finally {
       lock.releaseLock();
     }
+    // The ballot is recorded whatever happens to the email.
+    const mailed = mailsSoFar < MAIL_CAP && sendConfirmation_(check.values, new Date(receivedAt), earlier > 0);
+    return json_({ ok: true, receivedAt: receivedAt, mailed: mailed });
   } catch (err) {
     console.error(err);
     return json_({ ok: false, error: 'server', message: 'The ballot box had a problem and your ballot was not recorded.' });
@@ -431,6 +446,105 @@ function buildResponse_(form, values) {
   const missing = Object.keys(specs).filter((k) => !found[k]);
   if (missing.length) throw new Error('The form no longer matches BALLOT; missing: ' + missing.join(', '));
   return response;
+}
+
+/* ------------------------------------------------------------------------
+ * Confirmation email. Sent from the account that runs the script
+ * (ics-communications@icscanada.edu), with replies going to HELP_EMAIL.
+ * The page takes any address, so one address gets at most MAIL_CAP of these.
+ * ---------------------------------------------------------------------- */
+
+const MAIL_CAP = 10;
+const MAIL_FROM_NAME = 'Institute for Christian Studies';
+
+/** Sends the confirmation; returns false (and logs) if it couldn't. */
+function sendConfirmation_(values, when, replaces) {
+  try {
+    if (MailApp.getRemainingDailyQuota() < 1) {
+      console.warn('Daily email quota used up; no confirmation sent.');
+      return false;
+    }
+    const mail = confirmationEmail_(values, when, replaces);
+    MailApp.sendEmail({
+      to: values.email,
+      subject: mail.subject,
+      body: mail.text,
+      htmlBody: mail.html,
+      name: MAIL_FROM_NAME,
+      replyTo: HELP_EMAIL,
+    });
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+function confirmationEmail_(values, when, replaces) {
+  const stamp = Utilities.formatDate(when, 'America/Toronto', "EEEE, MMMM d, yyyy 'at' h:mm a z")
+    .replace(' AM ', ' am ').replace(' PM ', ' pm ');
+  const votes = [];
+  BALLOT.sections.forEach((s) => s.items.forEach((spec) => {
+    if (spec.type === 'vote') votes.push({ title: spec.title, choice: values[spec.key] || 'Left blank' });
+  }));
+
+  const lines = [
+    'Thank you for voting. Your ballot for the 2026 Annual General Meeting of the Institute for Christian Studies was recorded on ' + stamp + '.',
+  ];
+  if (replaces) lines.push('You cast an earlier ballot under the same name and email address. This one replaces it: your latest ballot is the one counted.');
+  const meeting = 'Results will be reported at the AGM on Saturday, December 12, 2026, 2:00 to 4:00 pm ET.';
+  const help = 'If you have any questions, reply to this email or write to Mark Standish at ' + HELP_EMAIL + '.';
+
+  const text = [
+    'Dear ' + values.firstName + ',',
+    lines.join('\n\n'),
+    'Your votes\n' + votes.map((v) => v.title + ': ' + v.choice).join('\n') + '\nSigned: ' + values.signature,
+    meeting + ' Join on Zoom:\n' + ZOOM_URL + '\nMeeting ID 813 2568 6051 · Passcode 613600',
+    help,
+    MAIL_FROM_NAME,
+  ].join('\n\n');
+
+  const h = escapeHtml_;
+  const p = (s) => '<p style="margin:0 0 16px">' + s + '</p>';
+  const rows = votes.map((v) =>
+    '<tr><td style="padding:8px 16px 8px 0;border-bottom:1px solid #EFE3E0;vertical-align:top">' + h(v.title) + '</td>' +
+    '<td style="padding:8px 0;border-bottom:1px solid #EFE3E0;vertical-align:top;font-weight:600;color:#2E1318">' + h(v.choice) + '</td></tr>').join('');
+  const html =
+    '<div style="max-width:560px;font-family:Outfit,Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#3A3330">' +
+    '<h1 style="margin:0 0 20px;font-family:Libre Baskerville,Georgia,serif;font-size:22px;line-height:1.3;color:#9B0D24">Your 2026 AGM ballot is recorded</h1>' +
+    p('Dear ' + h(values.firstName) + ',') +
+    lines.map((l) => p(h(l))).join('') +
+    '<h2 style="margin:24px 0 8px;font-family:Libre Baskerville,Georgia,serif;font-size:17px;color:#9B0D24">Your votes</h2>' +
+    '<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;border-top:1.5px solid #9B0D24;font-size:14px;margin:0 0 8px">' + rows + '</table>' +
+    p('<span style="color:#6B655F">Signed: </span>' + h(values.signature)) +
+    p(h(meeting) + ' <a href="' + ZOOM_URL + '" style="color:#9B0D24">Join on Zoom</a><br><span style="color:#6B655F">Meeting ID 813 2568 6051 · Passcode 613600</span>') +
+    p('If you have any questions, reply to this email or write to Mark Standish at <a href="mailto:' + HELP_EMAIL + '" style="color:#9B0D24">' + HELP_EMAIL + '</a>.') +
+    '<p style="margin:24px 0 0;color:#6B655F">' + MAIL_FROM_NAME + '</p></div>';
+
+  return { subject: 'Your 2026 ICS AGM ballot is recorded', text: text, html: html };
+}
+
+/**
+ * Run once from the Apps Script editor after this change. It asks for the new
+ * "send email as you" permission and sends a sample confirmation to the
+ * script's own account. Nothing is recorded on the ballot.
+ */
+function sendTestConfirmation() {
+  const to = Session.getEffectiveUser().getEmail();
+  const values = { firstName: 'Sample', lastName: 'Member', email: to, signature: 'Sample Member',
+    auditor: APPROVE, statements: APPROVE, budget: DO_NOT_APPROVE, dejonge: 'I don’t live in Eastern Canada', barthel: APPROVE };
+  const ok = sendConfirmation_(values, new Date(), false);
+  Logger.log(ok ? 'Sample confirmation sent to %s.' : 'Sending failed; see the log above. (%s)', to);
+}
+
+function digest_(s) {
+  return Utilities.base64EncodeWebSafe(
+    Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, String(s).trim().toLowerCase(), Utilities.Charset.UTF_8)
+  ).slice(0, 22);
+}
+
+function escapeHtml_(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
 function json_(data) {

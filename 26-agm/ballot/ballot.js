@@ -298,7 +298,7 @@
       .then(function (data) {
         clearTimeout(timer);
         setSending(false);
-        if (data.ok) return recorded(data, sentVotes);
+        if (data.ok) return recorded(data, sentVotes, data.mailed ? payload.email : '');
         if (data.error === 'closed') return show('closed');
         if (data.error === 'invalid' && data.field && fields[data.field]) {
           fieldError(data.field, data.message);
@@ -320,9 +320,9 @@
       });
   }
 
-  function recorded(data, votes) {
+  function recorded(data, votes, mailedTo) {
     var when = new Date(data.receivedAt || Date.now());
-    var cast = { at: when.toISOString(), votes: votes };
+    var cast = { at: when.toISOString(), votes: votes, mailedTo: mailedTo || '' };
     save(CAST, cast);
     save(STORE, null);
     showDone(cast);
@@ -337,6 +337,9 @@
     views.done.querySelector('[data-done-when]').textContent =
       'Recorded ' + stamp + '. Your choices:';
     renderReview(views.done.querySelector('[data-done-review]'), cast.votes);
+    var mail = views.done.querySelector('[data-done-mail]');
+    mail.textContent = cast.mailedTo ? 'We’ve emailed a copy to ' + cast.mailedTo + '.' : '';
+    mail.hidden = !cast.mailedTo;
     show('done');
   }
 
