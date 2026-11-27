@@ -249,8 +249,9 @@ function logLinks_(form) {
  * response Sheet stays the single record. Deploy as a web app that executes
  * as the owner and is open to anyone (see appsscript.json).
  *
- * Body: { id, firstName, lastName, email, signature, votes: { auditor: 'approve' | 'reject' | 'region' | '' , ... }, dryRun?, website? }
- * dryRun: validates and builds the response without submitting it (for testing).
+ * Body: { id, firstName, lastName, email, signature, votes: { auditor: 'approve' | 'reject' | 'region' | '' , ... }, website? }
+ * Test runs (dryRun) have ended: a ballot that asks for one is refused, so the
+ * endpoint can't be used to tie up the lock without recording anything.
  * website: a hidden field people never see; anything in it is refused, never confirmed.
  * ---------------------------------------------------------------------- */
 
@@ -258,11 +259,22 @@ const VOTE_VALUES = { approve: () => APPROVE, reject: () => DO_NOT_APPROVE, regi
 
 function doPost(e) {
   try {
+    const raw = (e && e.postData && e.postData.contents) || '';
+    // A real ballot is well under 2 KB; anything far larger is refused unread.
+    if (raw.length > 8000) {
+      return json_({ ok: false, error: 'bad_request', message: 'The ballot could not be read. Please reload the page and try again.' });
+    }
     let body;
     try {
-      body = JSON.parse((e && e.postData && e.postData.contents) || '');
+      body = JSON.parse(raw);
     } catch (err) {
       return json_({ ok: false, error: 'bad_request', message: 'The ballot could not be read. Please try again.' });
+    }
+    if (!body || typeof body !== 'object') {
+      return json_({ ok: false, error: 'bad_request', message: 'The ballot could not be read. Please try again.' });
+    }
+    if (body.dryRun) {
+      return json_({ ok: false, error: 'test_off', message: 'Test mode has ended. Remove ?test from the address, reload the page and cast your ballot.' });
     }
     // Never confirm a ballot that wasn't saved, even one that looks like a bot's.
     if (body.website) {
@@ -291,7 +303,6 @@ function doPost(e) {
 
       const response = buildResponse_(form, check.values);
       const receivedAt = new Date().toISOString();
-      if (body.dryRun) return json_({ ok: true, dryRun: true, receivedAt: receivedAt });
 
       response.submit();
       props.setProperty(key, receivedAt);
@@ -335,7 +346,7 @@ function validateBallot_(body) {
   for (const key in text) {
     const v = typeof body[key] === 'string' ? body[key].trim() : '';
     if (!v) return { field: key, error: 'Enter ' + text[key] + '.' };
-    if (v.length > 200) return { field: key, error: 'That is longer than we can store. Shorten ' + text[key] + '.' };
+    if (v.length > (key === 'email' ? 254 : 200)) return { field: key, error: 'That is longer than we can store. Shorten ' + text[key] + '.' };
     values[key] = v;
   }
   const emailProblem = emailProblem_(values.email);

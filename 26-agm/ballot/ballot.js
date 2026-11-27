@@ -3,7 +3,8 @@
    which checks it and records it in the 2026 Google Form. Nothing is sent
    anywhere else. Choices are kept in sessionStorage so a reload, or a trip to
    the notes, doesn't lose them; they are cleared once the ballot is recorded.
-   Add ?test to the address to send dry runs that are checked but not recorded. */
+   Test runs have ended: ?test now only shows a notice that this is the real
+   ballot, and anything cast with it is recorded like any other ballot. */
 (function () {
   'use strict';
 
@@ -17,7 +18,7 @@
   var TIMEOUT_MS = 45000;
   var STORE = 'ics-agm-2026-ballot';
   var CAST = 'ics-agm-2026-cast';
-  var TEST = /[?&]test\b/.test(location.search);
+  var OLD_TEST_LINK = /[?&]test\b/.test(location.search);
 
   var ITEMS = [
     { key: 'auditor', num: '1', label: 'Auditor for 2026–27' },
@@ -45,7 +46,7 @@
   var sending = false;
 
   form.hidden = false;
-  if (TEST) document.querySelector('[data-testmode]').hidden = false;
+  if (OLD_TEST_LINK) document.querySelector('[data-testmode]').hidden = false;
 
   /* ------------------------------------------------------ storage */
   function load(key) {
@@ -252,18 +253,33 @@
     cast();
   });
 
+  // What a ballot says, in a fixed order. If anything changes after a send
+  // whose reply was lost, the ballot gets a new id, so the retry is recorded as
+  // a new ballot (the later one counts) instead of being taken for the first.
+  function fingerprint() {
+    return JSON.stringify([
+      fields.firstName.value.trim(), fields.lastName.value.trim(),
+      fields.email.value.trim(), fields.signature.value.trim()
+    ].concat(ITEMS.map(function (item) { return state.votes[item.key] || ''; })));
+  }
+
   function cast() {
+    var sig = fingerprint();
+    if (state.sentAs && state.sentAs !== sig) state.id = newId();
+    state.sentAs = sig;
+    save(STORE, state);
     setSending(true);
+    // The receipt shows what was sent, even if choices change while it's on its way.
+    var sentVotes = JSON.parse(JSON.stringify(state.votes));
     var payload = {
       id: state.id,
       firstName: fields.firstName.value.trim(),
       lastName: fields.lastName.value.trim(),
       email: fields.email.value.trim(),
       signature: fields.signature.value.trim(),
-      votes: state.votes,
+      votes: sentVotes,
       website: document.getElementById('f-website').value
     };
-    if (TEST) payload.dryRun = true;
 
     var controller = 'AbortController' in window ? new AbortController() : null;
     var timer = controller && setTimeout(function () { controller.abort(); }, TIMEOUT_MS);
@@ -282,7 +298,7 @@
       .then(function (data) {
         clearTimeout(timer);
         setSending(false);
-        if (data.ok) return recorded(data);
+        if (data.ok) return recorded(data, sentVotes);
         if (data.error === 'closed') return show('closed');
         if (data.error === 'invalid' && data.field && fields[data.field]) {
           fieldError(data.field, data.message);
@@ -299,19 +315,16 @@
         } else {
           // Timeouts, redirects that fail and unreadable replies can all follow a
           // ballot that was in fact recorded, so say so plainly.
-          showError('We didn’t hear back from the ballot box.', ' Your ballot may or may not have been recorded. Cast it again: it will only be counted once.' + fallback);
+          showError('We didn’t hear back from the ballot box.', ' Your ballot may or may not have been recorded. Cast it again: it will only be counted once. If you change anything first, your later ballot is the one counted.' + fallback);
         }
       });
   }
 
-  function recorded(data) {
+  function recorded(data, votes) {
     var when = new Date(data.receivedAt || Date.now());
-    var cast = { at: when.toISOString(), votes: state.votes, test: !!data.dryRun };
-    // A test run leaves the ballot as it was, so real voting in this tab still works.
-    if (!data.dryRun) {
-      save(CAST, cast);
-      save(STORE, null);
-    }
+    var cast = { at: when.toISOString(), votes: votes };
+    save(CAST, cast);
+    save(STORE, null);
     showDone(cast);
   }
 
@@ -322,7 +335,7 @@
       hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
     });
     views.done.querySelector('[data-done-when]').textContent =
-      (cast.test ? 'Test only, not recorded: ' : 'Recorded ') + stamp + '. Your choices:';
+      'Recorded ' + stamp + '. Your choices:';
     renderReview(views.done.querySelector('[data-done-review]'), cast.votes);
     show('done');
   }
@@ -371,7 +384,7 @@
   setInterval(timeLeft, 60000);
   watchReading();
 
-  var done = TEST ? null : load(CAST);
+  var done = load(CAST);
   if (Date.now() >= CLEARLY_CLOSED) {
     views.mark.hidden = true;
     views.closed.hidden = false;
@@ -379,7 +392,7 @@
     views.mark.hidden = true;
     showDone(done);
     window.scrollTo(0, 0);
-  } else if (!TEST) {
+  } else {
     // A ballot closed by hand before the deadline: ask quietly, don't wait on it.
     fetch(SCRIPT_URL).then(function (r) { return r.json(); }).then(function (s) {
       if (s && s.open === false && !sending) show('closed');
