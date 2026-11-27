@@ -37,7 +37,8 @@
   var castBtn = form.querySelector('[data-cast]');
   var sendingRule = form.querySelector('[data-sending]');
   var fields = {
-    name: document.getElementById('f-name'),
+    firstName: document.getElementById('f-first'),
+    lastName: document.getElementById('f-last'),
     email: document.getElementById('f-email'),
     signature: document.getElementById('f-signature')
   };
@@ -66,7 +67,8 @@
   if (!state.votes) state.votes = {};
 
   function persist() {
-    state.name = fields.name.value;
+    state.firstName = fields.firstName.value;
+    state.lastName = fields.lastName.value;
     state.email = fields.email.value;
     state.signature = fields.signature.value;
     save(STORE, state);
@@ -119,14 +121,14 @@
     if (e.target.closest('[data-again]')) {
       save(CAST, null);
       state = { id: newId(), votes: {} };
-      fields.name.value = fields.email.value = fields.signature.value = '';
+      Object.keys(fields).forEach(function (k) { fields[k].value = ''; });
       save(STORE, state);
       refresh();
       show('mark');
     }
   });
 
-  ['name', 'email', 'signature'].forEach(function (k) {
+  Object.keys(fields).forEach(function (k) {
     fields[k].addEventListener('input', function () {
       persist();
       if (fields[k].getAttribute('aria-invalid') === 'true') clearFieldError(k);
@@ -175,7 +177,7 @@
       msg.className = 'af-error-msg';
       msg.id = input.id + '-error';
       input.insertAdjacentElement('afterend', msg);
-      input.setAttribute('aria-describedby', input.getAttribute('aria-describedby') + ' ' + msg.id);
+      input.setAttribute('aria-describedby', ((input.getAttribute('aria-describedby') || '') + ' ' + msg.id).trim());
     }
     msg.textContent = message;
   }
@@ -185,19 +187,40 @@
     var msg = document.getElementById(input.id + '-error');
     if (msg) {
       msg.remove();
-      input.setAttribute('aria-describedby', input.id + '-note');
+      var rest = (input.getAttribute('aria-describedby') || '').split(' ').filter(function (id) { return id && id !== msg.id; }).join(' ');
+      if (rest) input.setAttribute('aria-describedby', rest);
+      else input.removeAttribute('aria-describedby');
     }
   }
 
+  // Kept in step with emailProblem_() in ballot-script/src/Code.js.
+  var EMAIL_RE = /^[A-Za-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,63}$/;
+  function emailProblem(email) {
+    if (!email) return 'Enter your email address.';
+    if (/\s/.test(email)) return 'Remove the spaces from your email address.';
+    if (email.indexOf('@') < 0) return 'Your email address needs an @, like name@example.com.';
+    if (email.length > 254 || email.split('@')[0].length > 64 || !EMAIL_RE.test(email)) {
+      return 'Check your email address. It should look like name@example.com.';
+    }
+    return '';
+  }
+
+  // Check the address as soon as someone leaves the field, not only on Cast.
+  fields.email.addEventListener('change', function () {
+    var problem = fields.email.value.trim() && emailProblem(fields.email.value.trim());
+    if (problem) fieldError('email', problem); else clearFieldError('email');
+  });
+
   function validate() {
     var problems = [];
-    var name = fields.name.value.trim();
-    var email = fields.email.value.trim();
+    var first = fields.firstName.value.trim();
+    var last = fields.lastName.value.trim();
+    var emailMsg = emailProblem(fields.email.value.trim());
     var sig = fields.signature.value.trim();
-    ['name', 'email', 'signature'].forEach(clearFieldError);
-    if (!name) problems.push(['name', 'Enter your full name.']);
-    if (!email) problems.push(['email', 'Enter your email address.']);
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) problems.push(['email', 'Enter an email address, like name@example.com.']);
+    Object.keys(fields).forEach(clearFieldError);
+    if (!first) problems.push(['firstName', 'Enter your first name.']);
+    if (!last) problems.push(['lastName', 'Enter your last name.']);
+    if (emailMsg) problems.push(['email', emailMsg]);
     if (!sig) problems.push(['signature', 'Type your full name to sign the ballot.']);
     problems.forEach(function (p) { fieldError(p[0], p[1]); });
     if (problems.length) fields[problems[0][0]].focus();
@@ -233,7 +256,8 @@
     setSending(true);
     var payload = {
       id: state.id,
-      name: fields.name.value.trim(),
+      firstName: fields.firstName.value.trim(),
+      lastName: fields.lastName.value.trim(),
       email: fields.email.value.trim(),
       signature: fields.signature.value.trim(),
       votes: state.votes,
@@ -337,7 +361,8 @@
   }
 
   /* --------------------------------------------------------- start */
-  fields.name.value = state.name || '';
+  fields.firstName.value = state.firstName || '';
+  fields.lastName.value = state.lastName || '';
   fields.email.value = state.email || '';
   fields.signature.value = state.signature || '';
   save(STORE, state);

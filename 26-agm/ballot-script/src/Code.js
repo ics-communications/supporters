@@ -43,10 +43,9 @@ const BALLOT = {
     {
       // The first section shares the page with the form's title and description.
       items: [
-        { key: 'name', type: 'text', title: 'Full name', required: true,
-          help: 'The name on your ICS membership.' },
-        { key: 'email', type: 'email', title: 'Email address', required: true,
-          help: 'We’ll write to you only if there is a question about your ballot.' },
+        { key: 'firstName', type: 'text', title: 'First name', required: true },
+        { key: 'lastName', type: 'text', title: 'Last name', required: true },
+        { key: 'email', type: 'email', title: 'Email address', required: true },
       ],
     },
     {
@@ -250,7 +249,7 @@ function logLinks_(form) {
  * response Sheet stays the single record. Deploy as a web app that executes
  * as the owner and is open to anyone (see appsscript.json).
  *
- * Body: { id, name, email, signature, votes: { auditor: 'approve' | 'reject' | 'region' | '' , ... }, dryRun?, website? }
+ * Body: { id, firstName, lastName, email, signature, votes: { auditor: 'approve' | 'reject' | 'region' | '' , ... }, dryRun?, website? }
  * dryRun: validates and builds the response without submitting it (for testing).
  * website: a hidden field people never see; anything in it is refused, never confirmed.
  * ---------------------------------------------------------------------- */
@@ -332,16 +331,15 @@ function validateBallot_(body) {
     return { error: 'The ballot was missing its reference. Please reload the page and try again.' };
   }
 
-  const text = { name: 'your full name', email: 'your email address', signature: 'your signature' };
+  const text = { firstName: 'your first name', lastName: 'your last name', email: 'your email address', signature: 'your signature' };
   for (const key in text) {
     const v = typeof body[key] === 'string' ? body[key].trim() : '';
     if (!v) return { field: key, error: 'Enter ' + text[key] + '.' };
     if (v.length > 200) return { field: key, error: 'That is longer than we can store. Shorten ' + text[key] + '.' };
     values[key] = v;
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    return { field: 'email', error: 'Enter an email address, like name@example.com.' };
-  }
+  const emailProblem = emailProblem_(values.email);
+  if (emailProblem) return { field: 'email', error: emailProblem };
 
   const votes = body.votes && typeof body.votes === 'object' ? body.votes : {};
   for (const key in votes) {
@@ -355,6 +353,47 @@ function validateBallot_(body) {
     values[key] = VOTE_VALUES[v](spec);
   }
   return { values: values };
+}
+
+// The same check as the ballot page (ballot.js): a dot-atom local part, then a
+// domain of letter-or-digit labels (hyphens inside only) ending in a 2+ letter TLD.
+const EMAIL_RE = /^[A-Za-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,63}$/;
+
+function emailProblem_(email) {
+  if (/\s/.test(email)) return 'Remove the spaces from your email address.';
+  if (email.indexOf('@') < 0) return 'Your email address needs an @, like name@example.com.';
+  if (email.length > 254 || email.split('@')[0].length > 64 || !EMAIL_RE.test(email)) {
+    return 'Check your email address. It should look like name@example.com.';
+  }
+  return '';
+}
+
+/**
+ * One-time change (November 2026): splits "Full name" into "First name" and
+ * "Last name" and removes the notes under the name and email questions. It
+ * edits the live form in place, so existing responses and the link are kept.
+ * Safe to run more than once.
+ */
+function splitNameQuestion() {
+  const form = getForm_();
+  const items = form.getItems();
+  const find = (title) => items.find((item) => item.getTitle() === title);
+
+  let first = find('First name');
+  const full = find('Full name');
+  if (!first && full) first = full.setTitle('First name');
+  if (!first) throw new Error('Neither "Full name" nor "First name" is on the form.');
+  first.setHelpText('');
+
+  if (!find('Last name')) {
+    const last = form.addTextItem().setTitle('Last name').setRequired(true);
+    form.moveItem(last.getIndex(), first.getIndex() + 1);
+  }
+
+  const email = find('Email address');
+  if (email) email.setHelpText('');
+
+  Logger.log('Done. Questions now: %s', form.getItems().slice(0, 4).map((item) => item.getTitle()).join(' | '));
 }
 
 /** Matches each form item to BALLOT by its title and fills in the answers. */

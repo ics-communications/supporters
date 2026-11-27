@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026 AGM Ballot · Institute for Christian Studies</title>
 <meta name="description" content="Cast your ballot for the 2026 Annual General Meeting of the Institute for Christian Studies. Voting closes Saturday, December 12 at 4:00 pm ET.">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
 <meta name="theme-color" content="#7A0A1C">
 <link rel="preload" href="fonts/Outfit-300-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/LibreBaskerville-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -137,15 +137,19 @@
 
         <ol class="rv" data-review></ol>
 
-        <div class="af-field">
-          <label for="f-name">Full name</label>
-          <p class="af-note" id="f-name-note">The name on your ICS membership.</p>
-          <input id="f-name" name="name" type="text" autocomplete="name" aria-describedby="f-name-note" maxlength="200" required>
+        <div class="af-pair">
+          <div class="af-field">
+            <label for="f-first">First name</label>
+            <input id="f-first" name="firstName" type="text" autocomplete="given-name" maxlength="200" required>
+          </div>
+          <div class="af-field">
+            <label for="f-last">Last name</label>
+            <input id="f-last" name="lastName" type="text" autocomplete="family-name" maxlength="200" required>
+          </div>
         </div>
         <div class="af-field">
           <label for="f-email">Email address</label>
-          <p class="af-note" id="f-email-note">We’ll write only if there is a question about your ballot.</p>
-          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" aria-describedby="f-email-note" maxlength="200" required>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" required>
         </div>
         <div class="af-field">
           <label for="f-signature">Signature</label>
@@ -275,35 +279,35 @@
 
       <p class="fig__cap" id="cap-budget">Proposed statement of operations, 2026–27 <span>Canadian dollars</span></p>
       <div class="fig fig--wide" role="region" aria-labelledby="cap-budget" tabindex="0">
-        <table aria-labelledby="cap-budget">
-          <thead><tr><th scope="col"><span class="vh">Line</span></th><th scope="col">General Fund</th><th scope="col">Fixed assets</th><th scope="col">Restricted</th><th scope="col">Total</th></tr></thead>
-          <tbody>
-            <tr class="sub"><th scope="rowgroup" colspan="5">Revenues</th></tr>
-            <tr><th scope="row">Bequests</th><td>100,000</td><td>–</td><td>–</td><td>100,000</td></tr>
-            <tr><th scope="row">Church donations</th><td>50,000</td><td>–</td><td>–</td><td>50,000</td></tr>
-            <tr><th scope="row">Donations</th><td>648,500</td><td>–</td><td>–</td><td>648,500</td></tr>
-            <tr><th scope="row">Grants</th><td>17,918</td><td>–</td><td>160,000</td><td>177,918</td></tr>
-            <tr><th scope="row">Investment income</th><td>50,000</td><td>–</td><td>15,000</td><td>65,000</td></tr>
-            <tr><th scope="row">Other revenue</th><td>101,750</td><td>–</td><td>–</td><td>101,750</td></tr>
-            <tr><th scope="row">Tuition</th><td>339,800</td><td>–</td><td>–</td><td>339,800</td></tr>
-            <tr class="tot"><th scope="row">Total revenues</th><td>1,307,968</td><td>–</td><td>175,000</td><td>1,482,968</td></tr>
+        <table role="table" aria-labelledby="cap-budget">
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader"><span class="vh">Line</span></th><th scope="col" role="columnheader">General<br>fund</th><th scope="col" role="columnheader">Fixed<br>assets</th><th scope="col" role="columnheader">Restricted</th><th scope="col" role="columnheader" class="t">Total</th></tr></thead>
+          <tbody role="rowgroup">
+            <tr role="row" class="sub"><th scope="rowgroup" colspan="5" role="rowheader">Revenues</th></tr>
+            <tr role="row"><th scope="row" role="rowheader">Bequests</th><td role="cell" data-fund="General Fund">100,000</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">100,000</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Church donations</th><td role="cell" data-fund="General Fund">50,000</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">50,000</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Donations</th><td role="cell" data-fund="General Fund">648,500</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">648,500</td></tr>
+            <tr role="row" class="split"><th scope="row" role="rowheader">Grants</th><td role="cell" data-fund="General Fund">17,918</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted">160,000</td><td role="cell" class="t">177,918</td></tr>
+            <tr role="row" class="split"><th scope="row" role="rowheader">Investment income</th><td role="cell" data-fund="General Fund">50,000</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted">15,000</td><td role="cell" class="t">65,000</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Other revenue</th><td role="cell" data-fund="General Fund">101,750</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">101,750</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Tuition</th><td role="cell" data-fund="General Fund">339,800</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">339,800</td></tr>
+            <tr role="row" class="tot split"><th scope="row" role="rowheader">Total revenues</th><td role="cell" data-fund="General Fund">1,307,968</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted">175,000</td><td role="cell" class="t">1,482,968</td></tr>
           </tbody>
-          <tbody>
-            <tr class="sub"><th scope="rowgroup" colspan="5">Expenses</th></tr>
-            <tr><th scope="row">Salaries, benefits, allowances</th><td>1,106,100</td><td>–</td><td>–</td><td>1,106,100</td></tr>
-            <tr><th scope="row">Academic and research</th><td>60,150</td><td>–</td><td>160,000</td><td>220,150</td></tr>
-            <tr><th scope="row">Rent</th><td>55,000</td><td>–</td><td>–</td><td>55,000</td></tr>
-            <tr><th scope="row">Consulting and professional fees</th><td>132,600</td><td>–</td><td>–</td><td>132,600</td></tr>
-            <tr><th scope="row">Office, supplies and overhead</th><td>76,300</td><td>–</td><td>–</td><td>76,300</td></tr>
-            <tr><th scope="row">Conferences, lectures, events</th><td>37,500</td><td>–</td><td>–</td><td>37,500</td></tr>
-            <tr><th scope="row">Advertising and promotion</th><td>17,620</td><td>–</td><td>–</td><td>17,620</td></tr>
-            <tr><th scope="row">Depreciation and amortization</th><td>–</td><td>4,000</td><td>–</td><td>4,000</td></tr>
-            <tr class="tot"><th scope="row">Total expenses</th><td>1,485,270</td><td>4,000</td><td>160,000</td><td>1,649,270</td></tr>
+          <tbody role="rowgroup">
+            <tr role="row" class="sub"><th scope="rowgroup" colspan="5" role="rowheader">Expenses</th></tr>
+            <tr role="row"><th scope="row" role="rowheader">Salaries, benefits, allowances</th><td role="cell" data-fund="General Fund">1,106,100</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">1,106,100</td></tr>
+            <tr role="row" class="split"><th scope="row" role="rowheader">Academic and research</th><td role="cell" data-fund="General Fund">60,150</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted">160,000</td><td role="cell" class="t">220,150</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Rent</th><td role="cell" data-fund="General Fund">55,000</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">55,000</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Consulting and professional fees</th><td role="cell" data-fund="General Fund">132,600</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">132,600</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Office, supplies and overhead</th><td role="cell" data-fund="General Fund">76,300</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">76,300</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Conferences, lectures, events</th><td role="cell" data-fund="General Fund">37,500</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">37,500</td></tr>
+            <tr role="row"><th scope="row" role="rowheader">Advertising and promotion</th><td role="cell" data-fund="General Fund">17,620</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">17,620</td></tr>
+            <tr role="row" class="split"><th scope="row" role="rowheader">Depreciation and amortization</th><td role="cell" data-fund="General Fund" class="nil">–</td><td role="cell" data-fund="Fixed assets">4,000</td><td role="cell" data-fund="Restricted" class="nil">–</td><td role="cell" class="t">4,000</td></tr>
+            <tr role="row" class="tot split"><th scope="row" role="rowheader">Total expenses</th><td role="cell" data-fund="General Fund">1,485,270</td><td role="cell" data-fund="Fixed assets">4,000</td><td role="cell" data-fund="Restricted">160,000</td><td role="cell" class="t">1,649,270</td></tr>
           </tbody>
-          <tbody>
-            <tr><th scope="row">Deficit or excess before transfers</th><td>(177,302)</td><td>(4,000)</td><td>15,000</td><td>(166,302)</td></tr>
-            <tr><th scope="row">Interfund transfers</th><td>32,111</td><td>–</td><td>(32,111)</td><td>–</td></tr>
-            <tr class="tot"><th scope="row">Deficit after transfers</th><td>(145,191)</td><td>(4,000)</td><td>(17,111)</td><td>(166,302)</td></tr>
+          <tbody role="rowgroup">
+            <tr role="row" class="split"><th scope="row" role="rowheader">Deficit or excess before transfers</th><td role="cell" data-fund="General Fund">(177,302)</td><td role="cell" data-fund="Fixed assets">(4,000)</td><td role="cell" data-fund="Restricted">15,000</td><td role="cell" class="t">(166,302)</td></tr>
+            <tr role="row" class="split"><th scope="row" role="rowheader">Interfund transfers</th><td role="cell" data-fund="General Fund">32,111</td><td role="cell" data-fund="Fixed assets" class="nil">–</td><td role="cell" data-fund="Restricted">(32,111)</td><td role="cell" class="t">–</td></tr>
+            <tr role="row" class="tot split"><th scope="row" role="rowheader">Deficit after transfers</th><td role="cell" data-fund="General Fund">(145,191)</td><td role="cell" data-fund="Fixed assets">(4,000)</td><td role="cell" data-fund="Restricted">(17,111)</td><td role="cell" class="t">(166,302)</td></tr>
           </tbody>
         </table>
       </div>

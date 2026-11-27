@@ -1,4 +1,40 @@
 # Pages for supporters of the Institute for Christian Studies
-# Search engines and AI assistants are welcome to read and cite this site.
+# Search engines and AI assistants are welcome to read and cite this site,
+# except /26-agm/: the members' AGM ballot and package, which no crawler
+# should fetch. The ballot page also carries a noindex robots meta tag.
+
 User-agent: *
+Disallow: /26-agm/
+Allow: /
+
+# AI crawlers, named so that those which only obey their own group stay out too.
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Bytespider
+User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
+User-agent: FacebookBot
+User-agent: Amazonbot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: Diffbot
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+User-agent: YouBot
+User-agent: Timpibot
+User-agent: ImagesiftBot
+User-agent: omgili
+User-agent: AI2Bot
+User-agent: PetalBot
+Disallow: /26-agm/
 Allow: /
